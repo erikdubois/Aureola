@@ -35,7 +35,9 @@ Credits Willem O
 
 # Alva
 
-From old conky syntax to Lua syntax
+At the moment of creating this collection I found out that conky had decided to follow the LUA syntax for their configuration files.
+
+Adapted this conky so it is now compliant to the lua syntax. This has a LUA script that draws the rings etc.
 
 ![Screenshots](http://i.imgur.com/DiuiCGu.png)
 
