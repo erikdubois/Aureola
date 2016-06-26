@@ -5,6 +5,7 @@
 # where conky looks for a configuration file
 # Lua syntax!!
 
+
 # killing whatever conkies are still working
 killall conky
 sleep 1
@@ -23,6 +24,8 @@ esac
 cp conky.conf ~/.config/conky/conky.conf
 # making sure conky is started at boo
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
+cp -r lua ~/.config/conky
+
 
 #starting the conky again
 conky -c ~/.config/conky/conky.conf
