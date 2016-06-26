@@ -13,6 +13,17 @@ A little script is present to copy the config file to the right location and cop
 
 ![Screenshots](http://i.imgur.com/kqK7j0F.png)
 
+Credits Willem O
+
+# Alva
+
+From old conky syntax to Lua syntax
+
+![Screenshots](http://i.imgur.com/DiuiCGu.png)
+
+Credits EtlesTeam
+
+
 
 # Home of Conky
 
