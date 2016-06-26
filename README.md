@@ -3,6 +3,7 @@
 A collection of conky's I like.
 
 These conky's configuration files follow the LUA syntax as mentioned on the website for version 1.10 and later versions.
+They will be first tested and made on Linux Mint then tested on other Os's.
 
 
 # Home of Conky
