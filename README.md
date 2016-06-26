@@ -1,12 +1,28 @@
 # Aureola
 
-A collection of conky's I like.
+A collection of conky's I made myself and conky's I like that were shared with the community.
 
-These conky's configuration files follow the LUA syntax as mentioned on the website for version 1.10 and later versions.
+These conky's configuration files follow the LUA syntax as mentioned on the conky website for version 1.10 and later versions.
 
-They will be first tested and made on Linux Mint and then tested on other Os's.
+Conky's are will be first tested and made on Linux Mint and then tested on other Os's.
+
+
+# Installation of conky
+
+To be added at a later date.
+
+
+
+# Installation of Aureola conky collection
+
+To be added at a later date.
 
 A little script is present to copy the config file to the right location and copy the autostart for conky.
+
+
+
+
+# OVERVIEW OF THE CURRENT COLLECTION
 
 
 # Aureola - sys-info-willemo
@@ -15,6 +31,8 @@ A little script is present to copy the config file to the right location and cop
 
 Credits Willem O
 
+
+
 # Alva
 
 From old conky syntax to Lua syntax
@@ -22,6 +40,9 @@ From old conky syntax to Lua syntax
 ![Screenshots](http://i.imgur.com/DiuiCGu.png)
 
 Credits EtlesTeam
+
+
+
 
 
 
