@@ -1,5 +1,8 @@
 # Aureola
 
+Version : v1.0.4
+Date : 28/06/2016
+
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
 These conky's configuration files follow the LUA syntax as mentioned on the conky website for version 1.10 and later versions.
@@ -30,6 +33,15 @@ A little script is present to copy the config file to the right location and cop
 ![Screenshots](http://i.imgur.com/kqK7j0F.png)
 
 Credits Willem O
+
+
+
+
+# Aureola - sys-info-mono-willemo
+
+After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
+
+![Screenshots](http://i.imgur.com/K5yYqEa.png)
 
 
 
