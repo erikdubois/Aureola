@@ -103,3 +103,11 @@ https://github.com/brndnmtthws/conky/wiki/Configuration-Settings
 Conky Variables (more as backup)
 
 http://conky.sourceforge.net/variables.html
+
+http://u-scripts.blogspot.be/
+
+http://crunchbang.org/forums/viewtopic.php?id=16909&p=1
+
+http://crunchbang.org/forums/viewtopic.php?id=39997
+
+http://thepeachyblog.blogspot.be/p/index-or-home-page.html
