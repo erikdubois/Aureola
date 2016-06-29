@@ -104,6 +104,11 @@ Conky Variables (more as backup)
 
 http://conky.sourceforge.net/variables.html
 
+
+
+
+# Interesting links
+
 http://u-scripts.blogspot.be/
 
 http://crunchbang.org/forums/viewtopic.php?id=16909&p=1
