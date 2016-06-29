@@ -43,10 +43,10 @@ The conky files 'HOME' folder is ./config/conky.
 
 Anything in there will be started by conky.
 
-A little script is present to copy the config file to the right location and copy the autostart for conky.
 
 
-# Changing the conky
+
+# Switching the conky
 
 Every conky has an installation script.
 
