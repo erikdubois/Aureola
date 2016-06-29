@@ -73,7 +73,12 @@ Credits Willem O
 
 After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
 
+![Screenshots](http://i.imgur.com/9CxuMRZ.png)
+
+
+
 ![Screenshots](http://i.imgur.com/K5yYqEa.png)
+
 
 
 
