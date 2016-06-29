@@ -70,20 +70,18 @@
 #
 ##################################################################################################################
 
+#setting up git
+#https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
 
-#echo "# Aureola" >> README.md
-#git init
-#git add README.md
-#git commit -m "first commit"
-#git remote add origin https://github.com/erikdubois/Aureola.git
-#git push -u origin master
+git init
+git config --global user.name "Erik Dubois"
+git config --global user.email "erik.dubois@gmail.com"
+sudo git config --system core.editor nano
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=9600'
+git config --global push.default simple
 
 
-git add --all .
+git remote add origin https://github.com/erikdubois/Aureola.git
 
-# Committing to the local repository with a message containing the time details
-curtime=$(date)
-git commit -m "Automatic Backup @ $curtime"
-
-# Push the local snapshot to a remote destination
-git push origin master
+echo " ALL  D O N E !"
