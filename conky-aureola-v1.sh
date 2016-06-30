@@ -85,8 +85,13 @@
 [ -d /tmp/aureola ] && rm -rf "/tmp/aureola" || echo ""
 # download the github in folder /tmp/aureola
 git clone https://github.com/erikdubois/Aureola /tmp/aureola
+
+# if there is no hidden folder autostart then make one
+[ -d $HOME"/./config/autostart" ] || mkdir -p $HOME"/.config/autostart"
+
 # if there is no hidden folder conky then make one
 [ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
+
 # if there is not hidden folder aureola then make one
 # my choice to put all config files in a hidden folder out of side
 [ -d "~/.aureola" ] || mkdir -p $HOME/".aureola"
