@@ -92,6 +92,7 @@ esac
 
 # the standard place conky looks for a config file
 cp conky.conf ~/.config/conky/conky.conf
+cp dropbox.py ~/.config/conky/dropbox.py
 # making sure conky is started at boo
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
