@@ -100,6 +100,7 @@ cp -r /tmp/aureola/* ~/.aureola
 
 # starting the standard conky so you can see it is working
 cp -r ~/.aureola/sys-info-mono-willemo/conky.conf ~/.config/conky
+cp -r ~/.aureola/sys-info-mono-willemo/dropbox.py ~/.config/dropbox.py
 # making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
