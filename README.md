@@ -32,7 +32,7 @@ This script will take care of :
 	- copy/pasting a conky to the .config/conky folder so you see something
 
 	- starting the conky
-	
+
 
 
 The conky files 'HOME' folder is ./config/conky.
@@ -68,6 +68,10 @@ But conky is changing its configuration file to lua syntax. That gives issues at
 # Switching the conky
 
 Every conky has an installation script.
+
+The script asks you  if it is ok to delete everything inside folder ~/.config/conky.
+
+Respond with yes. The original files are in ~/.aureola anyway and on github.
 
 Two things will happen after conky has stopped.
 
