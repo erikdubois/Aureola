@@ -81,8 +81,8 @@
 	echo "Use 		: at own risk and with fun"
 	echo "----------------------------------------------------------------------"
 	echo "----------------------------------------------------------------------"
-	echo "Creation Date 	: 	26/06/2016"
-	echo "Version 			:	v3.0.4 "
+	echo "Creation Date 	: 	08/07/2016"
+	echo "Version 			:	v1.1.0 "
 	echo
 	echo
 	echo "This script will install conky,conkymanager,"

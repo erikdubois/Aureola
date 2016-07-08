@@ -19,14 +19,15 @@
 #             \.MMMMMMMMMMMMMMMMMMM    
 #                                      
 #
-#
-##################################################################################################################
-#
-# Current project : Conky aureola
-#
-# Source 	: 	https://github.com/erikdubois/Aureola
-#
-##################################################################################################################
+#=====================================================================================
+#                               Aureola
+# Date    : 08/07/2016
+# Author  : Erik Dubois at http://www.erikdubois.be
+# Version : v1.1.0
+# License : Distributed under the terms of GNU GPL version 2 or later
+# Documentation English: http://erikdubois.be/linux/install-conky-theme-aurora
+# Documentation Dutch: http://erikdubois.be/linux/conky
+#======================================================================================
 # Written to be used on 64 bits computers
 # Author 	: 	Erik Dubois
 # Website 	: 	http://www.erikdubois.be
