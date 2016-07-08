@@ -59,14 +59,13 @@ Conky will restart with new conky.
 
 # OVERVIEW OF THE CURRENT COLLECTION
 
-Newest conky comes first
+The most recent conky come first
 
 
 
 # Aureola - Acros
 
-script to get the latest image for spotify
-a logo for the distro
+script to get the latest image for spotify and a logo for the distro
 
 
 ![Screenshots](http://i.imgur.com/pyZEPdf.png)
