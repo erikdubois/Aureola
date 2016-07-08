@@ -77,7 +77,7 @@ a logo for the distro
 
 Working with a lua ring script
 
-![Screenshots](http://i.imgur.com/ueNVuDk.png)
+![Screenshots](http://i.imgur.com/VPBJ6uV.png)
 
 
 # Aureola - Lazuli
@@ -97,7 +97,7 @@ After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to
 
 
 
-# Aureola - sys-info-willemo
+# Aureola - Sparki
 
 ![Screenshots](http://i.imgur.com/GU4ck3k.png)
 
