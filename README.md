@@ -7,41 +7,52 @@ A collection of conky's I made myself and conky's I like that were shared with t
 
 These conky's configuration files follow the LUA syntax as mentioned on the conky website for version 1.10 and later versions.
 
-Conky's are will be first tested and made on Linux Mint and then tested on other Os's.
+Conky's will be first tested and made on Linux Mint and then tested on other Os's.
 
 
-# Installation of conky
+# Installation of conky aureola
 
-You can run a script to autoinstall all necessary items to let all conky's function fully.
+To get al these conky's to your computer, run the script
 
-	- conky-installation-vx.sh
-
-The least you should do is install these in a terminal : 
-
-	sudo apt-get install conky conky-all
-
-I recommend you use also the conkymanager.
-
-	sudo apt-get install conky-manager
-
-But conky is changing its configuration file to lua syntax. That gives issues at this moment of writing (June 2016).
+	- get-aureola-from-github-to-local-drive.sh
 
 
-# Installation of Aureola conky collection
+This script will take care of :
+	- file management
+	- making sure that conky start next time you boot
+	- making sure there is a .config/conky folder present
+	- making a hidden folder ~/.aureola where all the github files will reside
+	- copy/pasting the github files in the hidden folder ~/.aureola
+	- copy/pasting a conky to the .config/conky folder so you see something
+	- starting the conky
 
-The Aureola conky itself can be installed via script too.
-
-	- conky-aureola-vx.sh
-
-It will download everything from github and copy it in a hidden folder (CTRL +H):
-
-	./aureola
-
-Then it will trigger one config file in particular so you can see it works.
 
 The conky files 'HOME' folder is ./config/conky.
 
 Anything in there will be started by conky.
+
+
+
+# Installation of the program conky
+
+
+If you see nothing then you may still need to install conky.
+
+	sudo apt-get install conky conky-all
+
+	or
+
+run the script provided (which gets more programs to know your motherboard name, etc...)
+
+
+	- install-conky-and-extra-software.sh
+
+
+I recommend you use also the conkymanager but there is a but. Read on.
+
+	sudo apt-get install conky-manager
+
+But conky is changing its configuration file to lua syntax. That gives issues at this moment of writing (June 2016).
 
 
 
@@ -53,9 +64,12 @@ Every conky has an installation script.
 Two things will happen after conky has stopped.
 
 	1. current info in ./config/conky will be deleted
-	2. new conky files will be copied to ./config/conky 
+	2. new conky files will be copied from  ~/.aureola/...  to ./config/conky 
 
-Conky will restart with new conky.
+Conky will restart with new conky configuration file.
+
+
+
 
 # OVERVIEW OF THE CURRENT COLLECTION
 

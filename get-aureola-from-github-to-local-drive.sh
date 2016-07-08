@@ -99,7 +99,7 @@ git clone https://github.com/erikdubois/Aureola /tmp/aureola
 cp -r /tmp/aureola/* ~/.aureola
 
 # starting the standard conky so you can see it is working
-cp ~/.aureola/sys-info-mono-willemo/* ~/.config/conky
+cp ~/.aureola/acros/* ~/.config/conky
 
 # making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
