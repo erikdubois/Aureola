@@ -61,47 +61,62 @@ Conky will restart with new conky.
 
 Newest conky comes first
 
+
+
 # Aureola - Acros
 
 script to get the latest image for spotify
 a logo for the distro
 
 
-![Screenshots](http://i.imgur.com/6M6NucF.png)
+![Screenshots](http://i.imgur.com/pyZEPdf.png)
 
 
-![Screenshots](http://i.imgur.com/OFhRUlB.png)
+
+# Aureola - Salis
+
+Working with a lua ring script
+
+![Screenshots](http://i.imgur.com/ueNVuDk.png)
+
+
+# Aureola - Lazuli
+
+After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
+
+
+
+![Screenshots](http://i.imgur.com/8cdvlFm.png)
+
+
+
+![Screenshots](http://i.imgur.com/uPy8r2p.png)
+
+
+
+
 
 
 # Aureola - sys-info-willemo
 
-![Screenshots](http://i.imgur.com/kqK7j0F.png)
+![Screenshots](http://i.imgur.com/GU4ck3k.png)
 
 Credits Willem O
 
 
 
 
-# Aureola - sys-info-mono-willemo
-
-After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
-
-![Screenshots](http://i.imgur.com/9CxuMRZ.png)
 
 
 
-![Screenshots](http://i.imgur.com/K5yYqEa.png)
 
-
-![Screenshots](http://i.imgur.com/jd3C2PV.png)
-
-# Alva
+# Aureola - Alva
 
 At the moment of creating this collection I found out that conky had decided to follow the LUA syntax for their configuration files.
 
 Adapted this conky so it is now compliant to the lua syntax. This has a LUA script that draws the rings etc.
 
-![Screenshots](http://i.imgur.com/DiuiCGu.png)
+![Screenshots](http://i.imgur.com/57QwNug.png)
 
 Credits EtlesTeam
 
