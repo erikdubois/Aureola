@@ -86,11 +86,11 @@ After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to
 
 
 
-![Screenshots](http://i.imgur.com/8cdvlFm.png)
+![Screenshots](http://i.imgur.com/o2Dp2bH.png)
 
 
 
-![Screenshots](http://i.imgur.com/uPy8r2p.png)
+![Screenshots](http://i.imgur.com/2JLL5kl.png)
 
 
 
