@@ -83,7 +83,7 @@ Working with a lua ring script
 # Aureola - Lazuli
 
 After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
-
+Sardi icons to be found at https://sourceforge.net/projects/sardi
 
 
 ![Screenshots](http://i.imgur.com/o2Dp2bH.png)
