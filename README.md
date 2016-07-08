@@ -18,13 +18,21 @@ To get al these conky's to your computer, run the script
 
 
 This script will take care of :
+
 	- file management
+
 	- making sure that conky start next time you boot
+
 	- making sure there is a .config/conky folder present
+
 	- making a hidden folder ~/.aureola where all the github files will reside
+
 	- copy/pasting the github files in the hidden folder ~/.aureola
+
 	- copy/pasting a conky to the .config/conky folder so you see something
+
 	- starting the conky
+	
 
 
 The conky files 'HOME' folder is ./config/conky.
