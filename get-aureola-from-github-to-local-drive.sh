@@ -175,7 +175,9 @@ fi
 ########################                    S T A R T  O F  C O N K Y                   ##########################
 ##################################################################################################################
 
+# Just making sure that there not two conky's running
 
+killall conky 2>/dev/null
 
 #starting the conky 
 conky -c ~/.config/conky/conky.conf
