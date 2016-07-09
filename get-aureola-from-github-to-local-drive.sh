@@ -78,9 +78,9 @@
 
 
 
-
-# C O N K Y   A U R E O L A
-# from github
+##################################################################################################################
+###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
+##################################################################################################################b
 
 # if there is already a folder, delete or else do nothing
 [ -d /tmp/aureola ] && rm -rf "/tmp/aureola" || echo ""
@@ -93,17 +93,89 @@ git clone https://github.com/erikdubois/Aureola /tmp/aureola
 # if there is no hidden folder conky then make one
 [ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
 
-# if there is not hidden folder aureola then make one
+# if there is no hidden folder aureola then make one
 # my choice to put all config files in a hidden folder out of side
 [ -d "~/.aureola" ] || mkdir -p $HOME/".aureola"
+
+
+##################################################################################################################
+######################              C L E A N I N G  U P  O L D  F I L E S                    ####################
+##################################################################################################################
+
+# removing all the old files that may be in .aureola with confirm deletion
+
+if find ~/.aureola -mindepth 1 | read ; then
+
+	read -p "Everything in folder ~/.aureola will be deleted. Are you sure? (y/n)?" choice
+	case "$choice" in 
+ 	 y|Y ) rm -r ~/.aureola/*;;
+ 	 n|N ) echo "Nothing has changed.";;
+ 	 * ) echo "Invalid input.";;
+	esac
+
+else
+	echo "################################################################" 
+	echo "Installation folder is ready and empty. Files will now be copied."
+	echo "################################################################"
+fi
+
+##################################################################################################################
+######################              M O V I N G  I N  N E W  F I L E S                        ####################
+##################################################################################################################
+
+
 # copy all config files to this hidden folder
 cp -r /tmp/aureola/* ~/.aureola
 
-# starting the standard conky so you can see it is working
+# copying the latest conky so you can see it working
 cp ~/.aureola/acros/* ~/.config/conky
 
 # making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
+
+
+
+##################################################################################################################
+########################                    D E P E N D A N C I E S                     ##########################
+##################################################################################################################
+
+# C O N K Y
+
+# check if conky is installed
+if ! location="$(type -p "conky")" || [ -z "conky" ]; then
+
+	echo "################################################################"
+	echo "installing conky for this script to work"
+	echo "################################################################"
+
+  	sudo apt-get install conky
+fi
+
+# D M I D E C O D E
+
+
+# Acros depends on dmidecode to know the motherboard and manufacturer
+# check if dmidecode is installed
+
+if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+	echo "################################################################"
+	echo "installing dmidecode for this script to work"
+	echo "#################################################################"
+
+  	sudo apt-get install dmidecode
+
+  	#without this line dmidecode will not work - it needs sudo
+  	sudo chmod u+s /usr/sbin/dmidecode
+
+fi
+
+
+##################################################################################################################
+########################                    S T A R T  O F  C O N K Y                   ##########################
+##################################################################################################################
+
+
 
 #starting the conky 
 conky -c ~/.config/conky/conky.conf
