@@ -141,7 +141,7 @@ if ! location="$(type -p "conky")" || [ -z "conky" ]; then
 	echo "installing conky for this script to work"
 	echo "################################################################"
 
-  	sudo apt-get install conky
+  	sudo apt-get install conky-all
 fi
 
 # D M I D E C O D E
