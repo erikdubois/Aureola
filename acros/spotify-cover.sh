@@ -19,7 +19,7 @@
 	#echo $old_cover
 	#echo $new_cover
 
-	if [ $new_cover != $old_cover ]
+	if [[ $new_cover != $old_cover ]]
 	then
 		old_cover="$new_cover"
 		wget -O ~/.config/conky/last_album_pic.png $new_cover
