@@ -133,7 +133,7 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ##################################################################################################################
 
 
-DISTRO=lsb_release -si
+DISTRO=$(lsb_release -si)
 
 case $DISTRO in 
 
@@ -150,6 +150,9 @@ case $DISTRO in
 			echo "################################################################"
 
 		  	sudo apt-get install conky-all
+
+		  else
+		  	echo "Conky was installed. Proceding..."
 		fi
 
 		# D M I D E C O D E
@@ -169,6 +172,9 @@ case $DISTRO in
 		  	#without this line dmidecode will not work - it needs sudo
 
 		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+		  	echo "Dmidecode was installed. Proceding..."
 
 		fi
 
