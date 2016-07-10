@@ -122,7 +122,7 @@ fi
 
 # the standard place conky looks for a config file
 cp * ~/.config/conky/
-# making sure conky is started at boo
+# making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
 
@@ -178,6 +178,28 @@ case $DISTRO in
 
 		fi
 
+
+				# D M I D E C O D E
+
+
+		# Acros depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install lm-sensors
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceding..."
+
+		fi
+
 		;;
 
 	Arch)
@@ -187,7 +209,7 @@ case $DISTRO in
 		echo "you need to install the following packages"
 		echo "- conky-lua"
 		echo "- dmidecode"
-		echo "- sensors"
+		echo "- lm-sensors"
 		;;
 esac
 
