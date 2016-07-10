@@ -77,7 +77,7 @@
 # Lua syntax!!
 
 # killing whatever conkies are still working
-killall conky
+killall conky 2>/dev/null
 sleep 1
 
 ##################################################################################################################
@@ -132,44 +132,70 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
 
-# C O N K Y
 
-# check if conky is installed
-if ! location="$(type -p "conky")" || [ -z "conky" ]; then
+DISTRO=$(lsb_release -si)
 
-	echo "################################################################"
-	echo "installing conky for this script to work"
-	echo "################################################################"
+case $DISTRO in 
 
-  	sudo apt-get install conky-all
-fi
-
-# D M I D E C O D E
+	LinuxMint|linuxmint)
 
 
-# Acros depends on dmidecode to know the motherboard and manufacturer
-# check if dmidecode is installed
+		# C O N K Y
 
-if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+		# check if conky is installed
+		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
 
-	echo "################################################################"
-	echo "installing dmidecode for this script to work"
-	echo "#################################################################"
+			echo "################################################################"
+			echo "installing conky for this script to work"
+			echo "################################################################"
 
-  	sudo apt-get install dmidecode
+		  	sudo apt-get install conky-all
 
-  	#without this line dmidecode will not work - it needs sudo
+		  else
+		  	echo "Conky was installed. Proceding..."
+		fi
 
-  	sudo chmod u+s /usr/sbin/dmidecode
+		# D M I D E C O D E
 
-fi
 
+		# Acros depends on dmidecode to know the motherboard and manufacturer
+		# check if dmidecode is installed
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install dmidecode
+
+		  	#without this line dmidecode will not work - it needs sudo
+
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+		  	echo "Dmidecode was installed. Proceding..."
+
+		fi
+
+		;;
+
+	Arch)
+
+		echo "You are using an arch machine"
+		echo "For this conky to work fully"
+		echo "you need to install the following packages"
+		echo "- conky-lua"
+		echo "- dmidecode"
+		echo "- sensors"
+		;;
+esac
 
 ##################################################################################################################
 ########################                    S T A R T  O F  C O N K Y                   ##########################
 ##################################################################################################################
 
-#starting the conky again
+#starting the conky 
 conky -c ~/.config/conky/conky.conf
 
 echo "################################################################"

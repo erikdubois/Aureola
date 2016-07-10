@@ -132,59 +132,38 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
 
+# C O N K Y
 
-DISTRO=$(lsb_release -si)
+# check if conky is installed
+if ! location="$(type -p "conky")" || [ -z "conky" ]; then
 
-case $DISTRO in 
+	echo "################################################################"
+	echo "installing conky for this script to work"
+	echo "################################################################"
 
-	LinuxMint|linuxmint)
+  	sudo apt-get install conky-all
+fi
 
-
-		# C O N K Y
-
-		# check if conky is installed
-		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
-
-			echo "################################################################"
-			echo "installing conky for this script to work"
-			echo "################################################################"
-
-		  	sudo apt-get install conky-all
-
-		  else
-		  	echo "Conky was installed. Proceding..."
-		fi
-
-		# D M I D E C O D E
+# D M I D E C O D E
 
 
-		# Acros depends on dmidecode to know the motherboard and manufacturer
-		# check if dmidecode is installed
+# Acros depends on dmidecode to know the motherboard and manufacturer
+# check if dmidecode is installed
 
-		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
 
-			echo "################################################################"
-			echo "installing dmidecode for this script to work"
-			echo "#################################################################"
+	echo "################################################################"
+	echo "installing dmidecode for this script to work"
+	echo "#################################################################"
 
-		  	sudo apt-get install dmidecode
+  	sudo apt-get install dmidecode
 
-		  	#without this line dmidecode will not work - it needs sudo
+  	#without this line dmidecode will not work - it needs sudo
 
-		  	sudo chmod u+s /usr/sbin/dmidecode
+  	sudo chmod u+s /usr/sbin/dmidecode
 
-		  else
-		  	echo "Dmidecode was installed. Proceding..."
+fi
 
-		fi
-
-		;;
-
-	Arch)
-
-		echo "You are using an arch machine"
-		;;
-esac
 
 ##################################################################################################################
 ########################                    S T A R T  O F  C O N K Y                   ##########################

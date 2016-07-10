@@ -29,9 +29,6 @@ This script will take care of :
 
 	- copy/pasting the github files in the hidden folder ~/.aureola
 
-	- copy/pasting a conky to the .config/conky folder so you see something
-
-	- starting the conky
 
 
 
@@ -80,7 +77,8 @@ Two things will happen after conky has stopped.
 
 Conky will restart with new conky configuration file.
 
-
+If there are dependancies (read software) that is required for the conky to function fully,
+it will be installed as well.
 
 
 # OVERVIEW OF THE CURRENT COLLECTION
