@@ -163,7 +163,7 @@ Find out with following command in a terminal
 	ip link
 
 
-In the lua conky I did a netspeed test and adapted my conky max for upspeed and downspeed accordingly.
+For the lua conky I did a netspeed test and adapted my conky max for upspeed and downspeed accordingly.
 
 downspeed 	= 191,19 Mbps  	- in conky 	-	190.000
 
