@@ -1,6 +1,6 @@
 # Aureola
 
-Version : v1.1.5
+Version : v1.1.6
 Date : 11/07/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
@@ -94,6 +94,13 @@ it will be installed.
 
 The most recent conky come first
 
+
+# Aureola - Asura
+
+A conky first seen from the hand of Jesse Avalos attempted my needs and wishes.
+
+
+![Screenshots](http://i.imgur.com/LEq7GwJ.png)
 
 
 # Aureola - Acros
