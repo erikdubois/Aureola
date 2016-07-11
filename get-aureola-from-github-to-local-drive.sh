@@ -154,6 +154,7 @@ echo "the installation script. This will install a conky and will "
 echo "make sure all the dependancies (read software) will be"
 echo "installed as well. Check if some of the commands in the config"
 echo "really exist on your system and change the config accordingly."
+echo "Install fonts if you do not have them."
 echo "################################################################"
 
 

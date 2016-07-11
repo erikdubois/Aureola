@@ -79,7 +79,7 @@
 # killing whatever conkies are still working
 echo "################################################################"
 echo "Stopping conky's if available"
-echo "################################################################"
+
 
 killall conky 2>/dev/null
 sleep 1
@@ -105,26 +105,30 @@ sleep 1
 if [ "$(ls -A ~/.config/conky)" ] ; then
 
 	echo "################################################################"
-	read -p "Everything in folder ~/.config/conky will be deleted. Are you sure? (Y/n)?" choice
-	echo "################################################################"
+	read -p "Everything in folder ~/.config/conky will be deleted. Are you sure? (y/n)?" choice
+
 	case "$choice" in 
  	 y|Y ) rm -r ~/.config/conky/*;;
- 	 n|N ) echo "No files have been changed in folder ~/.config/conky.";;
- 	 * ) echo "Type y or n.";;
+ 	 n|N ) echo "No files have been changed in folder ~/.config/conky." & echo "Script ended!" & exit;;
+ 	 * ) echo "Type y or n." & echo "Script ended!" & exit;;
 	esac
 
 else
 	echo "################################################################" 
 	echo "Installation folder is ready and empty. Files will now be copied."
-	echo "################################################################"
+
 fi
 
 ##################################################################################################################
 ######################              M O V I N G  I N  N E W  F I L E S                        ####################
 ##################################################################################################################
-
+echo "################################################################" 
+echo "The files have been copied to ~/.config/conky."
 # the standard place conky looks for a config file
 cp * ~/.config/conky/
+
+echo "################################################################" 
+echo "Making sure conky autostarts next boot."
 # making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 

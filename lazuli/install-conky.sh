@@ -77,24 +77,145 @@
 # Lua syntax!!
 
 # killing whatever conkies are still working
+echo "################################################################"
+echo "Stopping conky's if available"
+
+
 killall conky 2>/dev/null
 sleep 1
 
-# deleting whatever is still in ~/.config/conky/
+##################################################################################################################
+###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
+##################################################################################################################
 
-read -p "Everything in folder ~/.config/conky/ will be deleted. Sure? (y/n)?" choice
-case "$choice" in 
-  y|Y ) rm -r ~/.config/conky/*;;
-  n|N ) echo "Nothing has changed.";;
-  * ) echo "Invalid input.";;
-esac
+# if there is no hidden folder autostart then make one
+[ -d $HOME"/./config/autostart" ] || mkdir -p $HOME"/.config/autostart"
+
+# if there is no hidden folder conky then make one
+[ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
 
 
+
+##################################################################################################################
+######################              C L E A N I N G  U P  O L D  F I L E S                    ####################
+##################################################################################################################
+
+# removing all the old files that may be in ./config/conky with confirm deletion
+
+if [ "$(ls -A ~/.config/conky)" ] ; then
+
+	echo "################################################################"
+	read -p "Everything in folder ~/.config/conky will be deleted. Are you sure? (y/n)?" choice
+
+	case "$choice" in 
+ 	 y|Y ) rm -r ~/.config/conky/*;;
+ 	 n|N ) echo "No files have been changed in folder ~/.config/conky." & echo "Script ended!" & exit;;
+ 	 * ) echo "Type y or n." & echo "Script ended!" & exit;;
+	esac
+
+else
+	echo "################################################################" 
+	echo "Installation folder is ready and empty. Files will now be copied."
+
+fi
+
+##################################################################################################################
+######################              M O V I N G  I N  N E W  F I L E S                        ####################
+##################################################################################################################
+echo "################################################################" 
+echo "The files have been copied to ~/.config/conky."
 # the standard place conky looks for a config file
-cp conky.conf ~/.config/conky/conky.conf
-cp dropbox.py ~/.config/conky/dropbox.py
-# making sure conky is started at boo
+cp * ~/.config/conky/
+
+echo "################################################################" 
+echo "Making sure conky autostarts next boot."
+# making sure conky is started at boot
 cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
-#starting the conky again
+
+
+
+##################################################################################################################
+########################                    D E P E N D A N C I E S                     ##########################
+##################################################################################################################
+
+echo "################################################################"
+echo "Checking dependancies"
+
+DISTRO=$(lsb_release -si)
+
+echo "################################################################"
+echo "You are working on " $DISTRO
+echo "################################################################"
+
+
+case $DISTRO in 
+
+	LinuxMint|linuxmint)
+
+
+	# C O N K Y
+
+		# check if conky is installed
+		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
+
+			echo "################################################################"
+			echo "installing conky for this script to work"
+			echo "################################################################"
+
+		  	sudo apt-get install conky-all
+
+		  else
+		  	echo "Conky was installed. Proceding..."
+		fi
+
+
+	# L M S E N S O R S
+
+
+		# Acros depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install lm-sensors
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceding..."
+
+		fi
+
+		;;
+
+	Arch)
+
+		echo "You are using an arch machine"
+		echo "For this conky to work fully"
+		echo "you need to install the following packages"
+		echo "- conky-lua"
+		echo "- dmidecode"
+		echo "- lm-sensors"
+		echo "- archlogo included in files"
+		;;
+esac
+
+##################################################################################################################
+########################                    S T A R T  O F  C O N K Y                   ##########################
+##################################################################################################################
+
+echo "################################################################"
+echo "Starting the conky"
+echo "################################################################"
+
+#starting the conky 
 conky -c ~/.config/conky/conky.conf
+
+echo "################################################################"
+echo "###################    T H E   E N D      ######################"
+echo "################################################################"
