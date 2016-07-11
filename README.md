@@ -34,23 +34,33 @@ This script will take care of :
 
 The conky files 'HOME' folder is ./config/conky.
 
-Anything in there will be started by conky.
+Anything with the name conky.conf will be started by conky.
 
 
 
-# Installation of the program conky
+# Running a conky
 
 
-If you see nothing then you may still need to install conky.
+Now you have a hidden folder on your computer with all the conky's of aureola.
 
-	sudo apt-get install conky conky-all
+Navigate to ~/.aureola  (or stay in your download folder)
 
-	or
+and choose a directory of a conky you like.
 
-run the script provided (which gets more programs to know your motherboard name, etc...)
+Run the installation script provided :
 
 
-	- install-conky-and-extra-software.sh
+	install-conky.sh
+
+
+This script will provide the following steps :
+
+	- making sure all folders are available
+	- alerting if you want to overwrite the ~/.config/conky files
+	- copy all files to ~/.config/conky
+	- making sure you autostart conky next boot
+	- checking dependancies and installing the extra software needed for this conky
+	- and last but not least - run the conky
 
 
 I recommend you use also the conkymanager but there is a but. Read on.
@@ -64,11 +74,13 @@ But conky is changing its configuration file to lua syntax. That gives issues at
 
 # Switching the conky
 
-Every conky has an installation script.
+Every conky has an individual installation script. That means you will only install software that you need for the conky.
 
 The script asks you  if it is ok to delete everything inside folder ~/.config/conky.
 
-Respond with yes. The original files are in ~/.aureola anyway and on github.
+The reason I have done this is because you sometimes change the code on the live conky in ~/.config/conky but if you change the conky via this script the files will be overwritten.
+
+Respond with yes if you did not change anything.
 
 Two things will happen after conky has stopped.
 
