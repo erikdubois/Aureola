@@ -110,7 +110,7 @@ if [ "$(ls -A ~/.config/conky)" ] ; then
 	case "$choice" in 
  	 y|Y ) rm -r ~/.config/conky/*;;
  	 n|N ) echo "No files have been changed in folder ~/.config/conky.";;
- 	 * ) echo "Invalid input.";;
+ 	 * ) echo "Type y or n.";;
 	esac
 
 else
