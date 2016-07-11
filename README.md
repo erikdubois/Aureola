@@ -64,17 +64,10 @@ This script will provide the following steps :
 
 	- making sure all folders are available
 	- alerting if you want to overwrite the ~/.config/conky files
-	- copy all files to ~/.config/conky
+	- copy all files of that particular conky to ~/.config/conky
 	- making sure you autostart conky next boot
 	- checking dependancies and installing the extra software needed for this conky
 	- and last but not least - run the conky
-
-
-I recommend you use also the conkymanager but there is a but. Read on.
-
-	sudo apt-get install conky-manager
-
-But conky is changing its configuration file to lua syntax. That gives issues at this moment of writing (June 2016).
 
 
 
@@ -85,16 +78,13 @@ Every conky has an individual installation script. That means you will only inst
 
 The script asks you  if it is ok to delete everything inside folder ~/.config/conky.
 
-The reason I have done this is because you sometimes change the code on the live conky in ~/.config/conky but if you change the conky via this script the files will be overwritten.
+The reason I have done this is because you sometimes change the code on the live conky in ~/.config/conky but if you change the conky via this script the files will be overwritten. Then all your work is gone.
 
 Respond with yes if you did not change anything.
 
-Two things will happen after conky has stopped.
 
-	1. current info in ./config/conky will be deleted
-	2. new conky files will be copied from  ~/.aureola/...  to ./config/conky 
-
-Conky will restart with new conky configuration file.
+	Exactly the same steps will be taken as above mentioned.
+	
 
 If there are dependancies (read software) that is required for the conky to function fully,
 it will be installed as well.
