@@ -21,20 +21,27 @@ This script will take care of :
 
 	- file management
 
-	- making sure that conky start next time you boot
+	- making sure that conky starts next time you boot
 
-	- making sure there is a .config/conky folder present
+	- making sure there is a ~/.config/conky folder present
 
 	- making a hidden folder ~/.aureola where all the github files will reside
 
 	- copy/pasting the github files in the hidden folder ~/.aureola
 
 
+Aureola's home folder is a hidden one. 
+
+	
+	~/.aureola
 
 
-The conky files 'HOME' folder is ./config/conky.
+Conky's home folder is also a hidden one.
 
-Anything with the name conky.conf will be started by conky.
+	~/.config/conky.
+
+
+Anything with the name <b>conky.conf</b> will be started if in the conky's home folder.
 
 
 
