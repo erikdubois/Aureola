@@ -301,7 +301,7 @@ font_size=13,
 orientation="nn"
 },
 {text="${downspeedf enp2s0}",
-x=75, y=447,
+x=60, y=447,
 colour={{0,0xDDDDDD,0.5},
        {0.6,0xEEEEEE,1},
        {1,0xDDDDDD,0.5}
@@ -321,7 +321,7 @@ font_size=13,
 orientation="nn"
 },
 {text="${upspeedf enp2s0}",
-x=75, y=479,
+x=60, y=479,
 colour={{0,0xDDDDDD,0.5},
        {0.6,0xEEEEEE,1},
        {1,0xDDDDDD,0.5}
