@@ -70,7 +70,7 @@
 #
 ##################################################################################################################
 
-find .  -name "conky.conf" -type f -exec sed -i  's/v1.1.2/v1.1.3/g' {} \;
-find .  -name "README.md" -type f -exec sed -i  's/v1.1.2/v1.1.3/g' {} \;
-find .  -name "conky.conf" -type f -exec sed -i  's/10\/07\/2016/11\/07\/2016/g' {} \;
-find .  -name "README.md" -type f -exec sed -i  's/10\/07\/2016/11\/07\/2016/g' {} \;
+find .  -name "conky.conf" -type f -exec sed -i  's/v1.1.3/v1.1.4/g' {} \;
+find .  -name "README.md" -type f -exec sed -i   's/v1.1.3/v1.1.4/g' {} \;
+find .  -name "conky.conf" -type f -exec sed -i  's/11\/07\/2016/11\/07\/2016/g' {} \;
+find .  -name "README.md" -type f -exec sed -i   's/11\/07\/2016/11\/07\/2016/g' {} \;
