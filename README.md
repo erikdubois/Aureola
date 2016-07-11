@@ -1,7 +1,7 @@
 # Aureola
 
-Version : v1.1.2
-Date : 10/07/2016
+Version : v1.1.3
+Date : 11/07/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -142,6 +142,27 @@ Adapted this conky so it is now compliant to the lua syntax. This has a LUA scri
 ![Screenshots](http://i.imgur.com/57QwNug.png)
 
 Credits EtlesTeam
+
+
+The original conky had wireless link quality and downspeed as bottom gauge.
+
+Since I am working on a pc, I wanted my ethernet connection to show up.
+
+If you want the original laptop conky back with wireless information then rename the rings_text-bg.lua to rings_text-bg-ethernet.lua. And change rings_text-bg-for-wireless.lua to rings_text-bg.lua. Check the name in the lua file for the name of your wireless card. Now it is named <b>wlx0015af414869</b>.
+
+The ethernet conky (the one standard activated) uses <b>enp2s0</b> as ethernet name. It can me also eth0 or eth1 or something else. 
+
+Find out with following command in a terminal
+
+	ip link
+
+
+In the lua conky I did a netspeed test and adapted my conky max for upspeed and downspeed accordingly.
+
+downspeed 	= 191,19 Mbps  	- in conky 	-	190.000
+Upspeed  	=  23,98 Mbps	- in conky 	-	22.000
+
+<a href="http://www.speedtest.net/my-result/5467198314"><img src="http://www.speedtest.net/result/5467198314.png" /></a>
 
 
 
