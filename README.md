@@ -97,7 +97,7 @@ The most recent conky come first
 
 # Aureola - Asura
 
-A conky first seen from the hand of Jesse Avalos attempted my needs and wishes.
+A conky first seen from the hand of Jesse Avalos and changed to my needs and wishes.
 
 
 ![Screenshots](http://i.imgur.com/LEq7GwJ.png)
