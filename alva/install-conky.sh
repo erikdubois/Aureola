@@ -78,7 +78,7 @@
 
 
 # killing whatever conkies are still working
-killall conky
+killall conky 2>/dev/null
 sleep 1
 
 # deleting whatever is still in ~/.config/conky/

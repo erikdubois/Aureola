@@ -98,7 +98,7 @@ script to get the latest image for spotify and a logo for the distro
 
 # Aureola - Salis
 
-Working with a lua ring script
+Working with a lua ring script. The explanation of Alva about eth0, eth1 etc applies here too. Check your system and change the lua.
 
 ![Screenshots](http://i.imgur.com/VPBJ6uV.png)
 

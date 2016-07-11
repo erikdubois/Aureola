@@ -82,7 +82,7 @@
 ###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
 ##################################################################################################################b
 
-# if there is already a folder, delete or else do nothing
+# if there is already a folder in tmp, delete or else do nothing
 [ -d /tmp/aureola ] && rm -rf "/tmp/aureola" || echo ""
 # download the github in folder /tmp/aureola
 git clone https://github.com/erikdubois/Aureola /tmp/aureola
@@ -126,12 +126,6 @@ fi
 
 # copy all config files to this hidden folder
 cp -r /tmp/aureola/* ~/.aureola
-
-# copying the latest conky so you can see it working
-cp ~/.aureola/acros/* ~/.config/conky
-
-# making sure conky is started at boot
-cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
 
 

@@ -90,22 +90,19 @@ sleep 1
 # if there is no hidden folder conky then make one
 [ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
 
-# if there is no hidden folder aureola then make one
-# my choice to put all config files in a hidden folder out of side
-[ -d "~/.aureola" ] || mkdir -p $HOME/".aureola"
 
 
 ##################################################################################################################
 ######################              C L E A N I N G  U P  O L D  F I L E S                    ####################
 ##################################################################################################################
 
-# removing all the old files that may be in .aureola with confirm deletion
+# removing all the old files that may be in ./config/conky with confirm deletion
 
-if find ~/.aureola -mindepth 1 | read ; then
+if [ "$(ls -A ~/.config/conky)" ] ; then
 
-	read -p "Everything in folder ~/.aureola will be deleted. Are you sure? (y/n)?" choice
+	read -p "Everything in folder ~/.config/conky will be deleted. Are you sure? (Y/n)?" choice
 	case "$choice" in 
- 	 y|Y ) rm -r ~/.aureola/*;;
+ 	 y|Y ) rm -r ~/.config/conky/*;;
  	 n|N ) echo "Nothing has changed.";;
  	 * ) echo "Invalid input.";;
 	esac
@@ -132,6 +129,11 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
 
+echo "################################################################"
+echo "Checking dependancies"
+echo "################################################################"
+
+
 
 DISTRO=$(lsb_release -si)
 
@@ -140,7 +142,7 @@ case $DISTRO in
 	LinuxMint|linuxmint)
 
 
-		# C O N K Y
+	# C O N K Y
 
 		# check if conky is installed
 		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
@@ -155,7 +157,7 @@ case $DISTRO in
 		  	echo "Conky was installed. Proceding..."
 		fi
 
-		# D M I D E C O D E
+	# D M I D E C O D E
 
 
 		# Acros depends on dmidecode to know the motherboard and manufacturer
@@ -179,7 +181,7 @@ case $DISTRO in
 		fi
 
 
-				# D M I D E C O D E
+	# L M S E N S O R S
 
 
 		# Acros depends on lm-sensors to know the motherboard and manufacturer
@@ -216,6 +218,10 @@ esac
 ##################################################################################################################
 ########################                    S T A R T  O F  C O N K Y                   ##########################
 ##################################################################################################################
+
+echo "################################################################"
+echo "Starting the conky"
+echo "################################################################"
 
 #starting the conky 
 conky -c ~/.config/conky/conky.conf
