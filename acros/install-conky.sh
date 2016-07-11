@@ -77,6 +77,10 @@
 # Lua syntax!!
 
 # killing whatever conkies are still working
+echo "################################################################"
+echo "Stopping conky's if available"
+echo "################################################################"
+
 killall conky 2>/dev/null
 sleep 1
 
@@ -100,10 +104,12 @@ sleep 1
 
 if [ "$(ls -A ~/.config/conky)" ] ; then
 
+	echo "################################################################"
 	read -p "Everything in folder ~/.config/conky will be deleted. Are you sure? (Y/n)?" choice
+	echo "################################################################"
 	case "$choice" in 
  	 y|Y ) rm -r ~/.config/conky/*;;
- 	 n|N ) echo "Nothing has changed.";;
+ 	 n|N ) echo "No files have been changed in folder ~/.config/conky.";;
  	 * ) echo "Invalid input.";;
 	esac
 
@@ -131,11 +137,13 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
 echo "################################################################"
 echo "Checking dependancies"
-echo "################################################################"
-
-
 
 DISTRO=$(lsb_release -si)
+
+echo "################################################################"
+echo "You are working on " $DISTRO
+echo "################################################################"
+
 
 case $DISTRO in 
 
@@ -212,6 +220,7 @@ case $DISTRO in
 		echo "- conky-lua"
 		echo "- dmidecode"
 		echo "- lm-sensors"
+		echo "- archlogo included in files"
 		;;
 esac
 
