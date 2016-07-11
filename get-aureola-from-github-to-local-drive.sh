@@ -108,7 +108,7 @@ echo "Check if there is a ~./config/conky folder else make one"
 
 echo "################################################################"
 echo "Check if there is a ~/.aureola folder else make one"
-echo "#################################################################"
+
 
 # if there is no hidden folder aureola then make one
 # my choice to put all config files in a hidden folder out of side
@@ -152,7 +152,7 @@ echo "################################################################"
 echo "Now choose a conky to install. Get inside the folder and run"
 echo "the installation script. This will install a conky and will "
 echo "make sure all the dependancies (read software) will be"
-echo "installed as well. Check if some of the commands in the config"
+echo "installed as well. Check if some of the commands in the conky config"
 echo "really exist on your system and change the config accordingly."
 echo "Install fonts if you do not have them."
 echo "################################################################"
