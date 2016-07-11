@@ -139,9 +139,15 @@ At the moment of creating this collection I found out that conky had decided to 
 
 Adapted this conky so it is now compliant to the lua syntax. This has a LUA script that draws the rings etc.
 
+
+
 ![Screenshots](http://i.imgur.com/57QwNug.png)
 
-Credits EtlesTeam
+This is the original conky from EtlesTeam still available in the folder lua.
+
+This is the changed version that will activated standard for ethernet connection.
+
+![Screenshots](http://i.imgur.com/77wMpId.png)
 
 
 The original conky had wireless link quality and downspeed as bottom gauge.
