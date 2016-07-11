@@ -84,10 +84,10 @@ Respond with yes if you did not change anything.
 
 
 	Exactly the same steps will be taken as above mentioned.
-	
+
 
 If there are dependancies (read software) that is required for the conky to function fully,
-it will be installed as well.
+it will be installed.
 
 
 # OVERVIEW OF THE CURRENT COLLECTION
