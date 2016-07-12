@@ -96,11 +96,53 @@ Whether you install spotify or not is left up to the user. Follow this link and 
 
 	https://www.spotify.com/nl/download/linux/
 
-	
+
 
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky come first
+
+
+# Aureola - Netsense
+
+This conky came from the need to know my network information and current downloads via transmission torrents.
+
+The conky works with the program transmission-cli (command line interface). It will be installed during the installation script. 
+
+After changing the settings in Edit, Preferences, Remote and allowing remote access only to your personal pc aka 127.0.0.1, you can see the current status of your torrent downloads in the conky.
+
+DO NOT FORGET TO DO THIS!
+
+![Screenshots](http://i.imgur.com/GnExWlW.png)
+
+If transmission is not downloading anything (or uploading), you will get this message.
+
+![Screenshots](http://i.imgur.com/o6hRerL.png)
+
+If the download is idle, you will see this message.
+
+![Screenshots](http://i.imgur.com/3A3EYum.png)
+
+If the download has started, you will see this message.
+Green means you are downloading. Check out the percentage.
+
+![Screenshots](http://i.imgur.com/4n9aVUD.png)
+
+The download is further along. Check out the percentage.
+ETA = Estimated Time of Arrival
+
+![Screenshots](http://i.imgur.com/OlBgxAz.png)
+
+If you stop the download for some reason, you will get this message.
+
+![Screenshots](http://i.imgur.com/QVbDBxy.png)
+
+VERY IMPORTANT.
+If you are seeding i.e. uploading then the color is red.
+
+![Screenshots](http://i.imgur.com/nnLfm8u.png)
+
+
 
 
 # Aureola - Asura
