@@ -90,6 +90,14 @@ If there are dependancies (read software) that is required for the conky to func
 it will be installed.
 
 
+# Spotify
+
+Whether you install spotify or not is left up to the user. Follow this link and follow the steps
+
+	https://www.spotify.com/nl/download/linux/
+
+	
+
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky come first
