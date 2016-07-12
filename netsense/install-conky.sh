@@ -198,7 +198,7 @@ echo "################################################################"
 
 case $DISTRO in 
 
-	LinuxMint|linuxmint)
+	LinuxMint|linuxmint|Ubuntu|ubuntu)
 
 
 	# C O N K Y
@@ -317,8 +317,6 @@ case $DISTRO in
 		  	echo "netstat was installed. Proceding..."
 
 		fi
-
-
 		;;
 
 	Arch)
@@ -332,6 +330,11 @@ case $DISTRO in
 		echo "- curl"
 		echo "- wget"
 		echo "- netstat"
+		;;
+	
+	*)
+		echo "No dependancies installed."
+		echo "No installation lines for your system."
 		;;
 esac
 

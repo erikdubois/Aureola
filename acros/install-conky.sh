@@ -218,7 +218,7 @@ echo "################################################################"
 
 case $DISTRO in 
 
-	LinuxMint|linuxmint)
+	LinuxMint|linuxmint|Ubuntu|ubuntu)
 
 
 	# C O N K Y
@@ -280,7 +280,6 @@ case $DISTRO in
 		  	echo "lm-sensors was installed. Proceding..."
 
 		fi
-
 		;;
 
 	Arch)
@@ -292,6 +291,11 @@ case $DISTRO in
 		echo "- dmidecode"
 		echo "- lm-sensors"
 		echo "- archlogo included in files"
+		;;
+
+	*)
+		echo "No dependancies installed."
+		echo "No installation lines for your system."
 		;;
 esac
 
