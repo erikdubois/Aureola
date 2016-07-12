@@ -124,11 +124,13 @@ If the download is idle, you will see this message.
 ![Screenshots](http://i.imgur.com/3A3EYum.png)
 
 If the download has started, you will see this message.
+
 Green means you are downloading. Check out the percentage.
 
 ![Screenshots](http://i.imgur.com/4n9aVUD.png)
 
 The download is further along. Check out the percentage.
+
 ETA = Estimated Time of Arrival
 
 ![Screenshots](http://i.imgur.com/OlBgxAz.png)
@@ -137,12 +139,27 @@ If you stop the download for some reason, you will get this message.
 
 ![Screenshots](http://i.imgur.com/QVbDBxy.png)
 
+
+
 VERY IMPORTANT.
+
+
 If you are seeding i.e. uploading then the color is red.
 
 ![Screenshots](http://i.imgur.com/nnLfm8u.png)
 
 
+<b>Remark for Linux Mint 18 Mate.</b>
+
+Change the conky.conf file at the bottom and change this line
+
+	${if_running transmission-gtk}${color1}#
+
+to
+
+	${if_running transmission-gt}${color1}#
+
+Yes! The naming of the process is different.
 
 
 # Aureola - Asura
