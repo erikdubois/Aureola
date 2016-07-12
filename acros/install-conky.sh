@@ -164,7 +164,7 @@ FONT="SourceSansPro-ExtraLight"
 if fc-list | grep -i $FONT >/dev/null ; then
 
 	echo "################################################################" 
-    echo "The font is already available. Proceding ...";
+    echo "The font is already available. Proceeding ...";
 
 else
 	echo "################################################################" 
@@ -233,13 +233,13 @@ case $DISTRO in
 		  	sudo apt-get install conky-all
 
 		  else
-		  	echo "Conky was installed. Proceding..."
+		  	echo "Conky was installed. Proceeding..."
 		fi
 
 	# D M I D E C O D E
 
 
-		# Acros depends on dmidecode to know the motherboard and manufacturer
+		# The conky depends on dmidecode to know the motherboard and manufacturer
 		# check if dmidecode is installed
 
 		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
@@ -257,7 +257,7 @@ case $DISTRO in
 		  else
 
 		  	echo "################################################################"
-		  	echo "Dmidecode was installed. Proceding..."
+		  	echo "Dmidecode was installed. Proceeding..."
 			echo "################################################################"
 			echo "Setting the user rights for dmidecode to be able to use it in conky"
 		  	sudo chmod u+s /usr/sbin/dmidecode
@@ -268,7 +268,7 @@ case $DISTRO in
 	# L M S E N S O R S
 
 
-		# Acros depends on lm-sensors to know the motherboard and manufacturer
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
 		# check if lm-sensors is installed
 
 		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
@@ -282,7 +282,7 @@ case $DISTRO in
 
 
 		  else
-		  	echo "lm-sensors was installed. Proceding..."
+		  	echo "lm-sensors was installed. Proceeding..."
 
 		fi
 		;;
@@ -295,7 +295,6 @@ case $DISTRO in
 		echo "- conky-lua"
 		echo "- dmidecode"
 		echo "- lm-sensors"
-		echo "- archlogo included in files"
 		;;
 
 	*)

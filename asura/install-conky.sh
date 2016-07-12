@@ -84,15 +84,23 @@ echo "Stopping conky's if available"
 killall conky 2>/dev/null
 sleep 1
 
+
+
 ##################################################################################################################
 ###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
 ##################################################################################################################
+
+
 
 # if there is no hidden folder autostart then make one
 [ -d $HOME"/./config/autostart" ] || mkdir -p $HOME"/.config/autostart"
 
 # if there is no hidden folder conky then make one
 [ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
+
+# if there is no hidden folder fonts then make one
+[ -d $HOME"/./fonts" ] || mkdir -p $HOME"/.fonts"
+
 
 
 
@@ -101,6 +109,8 @@ sleep 1
 ##################################################################################################################
 
 # removing all the old files that may be in ./config/conky with confirm deletion
+
+
 
 if [ "$(ls -A ~/.config/conky)" ] ; then
 
@@ -119,13 +129,18 @@ else
 
 fi
 
+
+
 ##################################################################################################################
 ######################              M O V I N G  I N  N E W  F I L E S                        ####################
 ##################################################################################################################
+
+
+
 echo "################################################################" 
 echo "The files have been copied to ~/.config/conky."
 # the standard place conky looks for a config file
-cp * ~/.config/conky/
+cp -r * ~/.config/conky/
 
 echo "################################################################" 
 echo "Making sure conky autostarts next boot."
@@ -134,10 +149,61 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 
 
 
+##################################################################################################################
+########################                           F O N T S                            ##########################
+##################################################################################################################
+
+
+
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
+FONT="GeosansLight"
+
+
+if fc-list | grep -i $FONT >/dev/null ; then
+
+	echo "################################################################" 
+    echo "The font is already available. Proceeding ...";
+
+else
+	echo "################################################################" 
+    echo "The font is not currently installed, would you like to install it now? (y/n)";
+    read response
+    if [[ "$response" == [yY] ]]; then
+        echo "Installing the font to the ~/.fonts directory.";
+        cp ~/.config/conky/fonts/* ~/.fonts
+        echo "################################################################" 
+        echo "Building new fonts into the cache files";
+        echo "Depending on the number of fonts, this may take a while..." 
+        fc-cache -fv ~/.fonts
+		echo "################################################################" 
+		echo "Check if the cache build was successful?";    
+        if fc-list | grep -i $FONT >/dev/null; then
+            echo "################################################################" 
+            echo "The font was sucessfully installed!";
+        else
+        	echo "################################################################" 
+            echo "Something went wrong while trying to install the font.";
+        fi
+    else
+    	echo "################################################################" 	
+        echo "Skipping the installation of the font.";
+        echo "Please note that this conky configuration will not work";
+        echo "correctly without the font.";
+    fi
+
+fi
+
+
+
 
 ##################################################################################################################
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
+
+
+
 
 echo "################################################################"
 echo "Checking dependancies"
@@ -149,9 +215,10 @@ echo "You are working on " $DISTRO
 echo "################################################################"
 
 
+
 case $DISTRO in 
 
-	LinuxMint|linuxmint)
+	LinuxMint|linuxmint|Ubuntu|ubuntu)
 
 
 	# C O N K Y
@@ -166,29 +233,7 @@ case $DISTRO in
 		  	sudo apt-get install conky-all
 
 		  else
-		  	echo "Conky was installed. Proceding..."
-		fi
-
-
-	# L M S E N S O R S
-
-
-		# This conky depends on lm-sensors to know the heat of your hardware.
-		# check if lm-sensors is installed
-
-		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
-
-			echo "################################################################"
-			echo "installing lm-sensors for this script to work"
-			echo "#################################################################"
-
-		  	sudo apt-get install lm-sensors
-
-
-
-		  else
-		  	echo "lm-sensors was installed. Proceding..."
-
+		  	echo "Conky was installed. Proceeding..."
 		fi
 
 		;;
@@ -199,9 +244,12 @@ case $DISTRO in
 		echo "For this conky to work fully"
 		echo "you need to install the following packages"
 		echo "- conky-lua"
-		echo "- dmidecode"
-		echo "- lm-sensors"
-		echo "- archlogo included in files"
+
+		;;
+
+	*)
+		echo "No dependancies installed."
+		echo "No installation lines for your system."
 		;;
 esac
 

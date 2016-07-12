@@ -149,7 +149,7 @@ FONT="NotoMono-Regular"
 if fc-list | grep -i $FONT >/dev/null; then
 
 	echo "################################################################" 
-    echo "The font is already available. Proceding ...";
+    echo "The font is already available. Proceeding ...";
 
 else
 	echo "################################################################" 
@@ -189,7 +189,7 @@ FONT="webdings"
 if fc-list | grep -i $FONT >/dev/null; then
 
 	echo "################################################################" 
-    echo "The font is already available. Proceding ...";
+    echo "The font is already available. Proceeding ...";
 
 else
 	echo "################################################################" 
@@ -253,7 +253,7 @@ case $DISTRO in
 		  	sudo apt-get install conky-all
 
 		  else
-		  	echo "conky was installed. Proceding..."
+		  	echo "conky was installed. Proceeding..."
 		fi
 
 	# V N S T A T
@@ -272,7 +272,7 @@ case $DISTRO in
 
 		  else
 
-		  	echo "vnstat was installed. Proceding..."
+		  	echo "vnstat was installed. Proceeding..."
 
 		fi
 
@@ -292,7 +292,7 @@ case $DISTRO in
 
 		  else
 
-		  	echo "transmission-cli was installed. Proceding..."
+		  	echo "transmission-cli was installed. Proceeding..."
 
 		fi
 
@@ -313,7 +313,7 @@ case $DISTRO in
 
 		  else
 
-		  	echo "curl was installed. Proceding..."
+		  	echo "curl was installed. Proceeding..."
 
 		fi
 
@@ -333,7 +333,7 @@ case $DISTRO in
 
 		  else
 
-		  	echo "wget was installed. Proceding..."
+		  	echo "wget was installed. Proceeding..."
 
 		fi
 
@@ -354,7 +354,7 @@ case $DISTRO in
 
 		  else
 
-		  	echo "netstat was installed. Proceding..."
+		  	echo "netstat was installed. Proceeding..."
 
 		fi
 		;;
