@@ -100,7 +100,7 @@ Whether you install spotify or not is left up to the user. Follow this link and 
 
 # OVERVIEW OF THE CURRENT COLLECTION
 
-The most recent conky come first
+The most recent conky comes first.
 
 
 # Aureola - Netsense
