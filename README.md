@@ -184,6 +184,8 @@ In Ubuntu Mate 16.04 you can install it via
 ![Screenshots](http://i.imgur.com/pyZEPdf.png)
 
 
+![Screenshots](http://i.imgur.com/y92Jrp4.png)
+
 
 # Aureola - Salis
 
