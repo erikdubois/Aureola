@@ -87,8 +87,30 @@
 # download the github in folder /tmp/aureola
 
 echo "################################################################"
+echo "Checking if git is installed"
+echo "Install git for an easy installation"
+
+
+	# G I T
+
+		# check if git is installed
+		if ! location="$(type -p "git")" || [ -z "git" ]; then
+
+			echo "################################################################"
+			echo "installing git for this script to work"
+			echo "################################################################"
+
+		  	sudo apt-get install git
+
+		  else
+		  	echo "git was installed. Proceding..."
+		fi
+
+
+
+echo "################################################################"
 echo "Downloading the files from github to tmp directory"
-echo "#################################################################"
+
 
 git clone https://github.com/erikdubois/Aureola /tmp/aureola
 

@@ -84,23 +84,15 @@ echo "Stopping conky's if available"
 killall conky 2>/dev/null
 sleep 1
 
-
-
 ##################################################################################################################
 ###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
 ##################################################################################################################
-
-
 
 # if there is no hidden folder autostart then make one
 [ -d $HOME"/./config/autostart" ] || mkdir -p $HOME"/.config/autostart"
 
 # if there is no hidden folder conky then make one
 [ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
-
-# if there is no hidden folder fonts then make one
-[ -d $HOME"/./fonts" ] || mkdir -p $HOME"/.fonts"
-
 
 
 
@@ -109,8 +101,6 @@ sleep 1
 ##################################################################################################################
 
 # removing all the old files that may be in ./config/conky with confirm deletion
-
-
 
 if [ "$(ls -A ~/.config/conky)" ] ; then
 
@@ -129,14 +119,9 @@ else
 
 fi
 
-
-
 ##################################################################################################################
 ######################              M O V I N G  I N  N E W  F I L E S                        ####################
 ##################################################################################################################
-
-
-
 echo "################################################################" 
 echo "The files have been copied to ~/.config/conky."
 # the standard place conky looks for a config file
@@ -158,10 +143,10 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="SourceSansPro-ExtraLight"
+FONT="NotoMono-Regular"
 
 
-if fc-list | grep -i $FONT >/dev/null ; then
+if fc-list | grep -i $FONT >/dev/null; then
 
 	echo "################################################################" 
     echo "The font is already available. Proceding ...";
@@ -197,13 +182,9 @@ fi
 
 
 
-
 ##################################################################################################################
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
-
-
-
 
 echo "################################################################"
 echo "Checking dependancies"
@@ -213,7 +194,6 @@ DISTRO=$(lsb_release -si)
 echo "################################################################"
 echo "You are working on " $DISTRO
 echo "################################################################"
-
 
 
 case $DISTRO in 
@@ -233,53 +213,111 @@ case $DISTRO in
 		  	sudo apt-get install conky-all
 
 		  else
-		  	echo "Conky was installed. Proceding..."
+		  	echo "conky was installed. Proceding..."
 		fi
 
-	# D M I D E C O D E
+	# V N S T A T
 
 
-		# Acros depends on dmidecode to know the motherboard and manufacturer
-		# check if dmidecode is installed
+		# The conky depends on vnstat to know your traffic use.
+		# check if vnstat is installed
 
-		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+		if ! location="$(type -p "vnstat")" || [ -z "vnstat" ]; then
 
 			echo "################################################################"
-			echo "installing dmidecode for this script to work"
+			echo "installing vnstat for this script to work"
 			echo "#################################################################"
 
-		  	sudo apt-get install dmidecode
-
-		  	#without this line dmidecode will not work - it needs sudo
-
-		  	sudo chmod u+s /usr/sbin/dmidecode
+		  	sudo apt-get install vnstat
 
 		  else
-		  	echo "Dmidecode was installed. Proceding..."
+
+		  	echo "vnstat was installed. Proceding..."
 
 		fi
 
+	# T R A N S M I S S I O N - C L I 
 
-	# L M S E N S O R S
 
+		# The conky depends on transmission-cli to know your traffic use.
+		# check if transmission-cli is installed
 
-		# Acros depends on lm-sensors to know the motherboard and manufacturer
-		# check if lm-sensors is installed
-
-		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+		if ! location="$(type -p "transmission-cli")" || [ -z "transmission-cli" ]; then
 
 			echo "################################################################"
-			echo "installing lm-sensors for this script to work"
+			echo "installing transmission-cli for this script to work"
 			echo "#################################################################"
 
-		  	sudo apt-get install lm-sensors
-
-
+		  	sudo apt-get install transmission-cli
 
 		  else
-		  	echo "lm-sensors was installed. Proceding..."
+
+		  	echo "transmission-cli was installed. Proceding..."
 
 		fi
+
+
+	# C U R L 
+
+
+		# The conky depends on curl to get info from the net.
+		# check if curl is installed
+
+		if ! location="$(type -p "curl")" || [ -z "curl" ]; then
+
+			echo "################################################################"
+			echo "installing curl for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install curl
+
+		  else
+
+		  	echo "curl was installed. Proceding..."
+
+		fi
+
+	# W G E T  
+
+
+		# The conky depends on wget to get info from the net. 
+		# check if wget is installed
+
+		if ! location="$(type -p "wget")" || [ -z "wget" ]; then
+
+			echo "################################################################"
+			echo "installing wget for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install wget
+
+		  else
+
+		  	echo "wget was installed. Proceding..."
+
+		fi
+
+
+		# N E T S T A T   
+
+
+		# The conky depends on netstat to know your traffic use. 
+		# check if netstat is installed
+
+		if ! location="$(type -p "netstat")" || [ -z "netstat" ]; then
+
+			echo "################################################################"
+			echo "installing netstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install netstat
+
+		  else
+
+		  	echo "netstat was installed. Proceding..."
+
+		fi
+
 
 		;;
 
@@ -289,9 +327,11 @@ case $DISTRO in
 		echo "For this conky to work fully"
 		echo "you need to install the following packages"
 		echo "- conky-lua"
-		echo "- dmidecode"
-		echo "- lm-sensors"
-		echo "- archlogo included in files"
+		echo "- vnstat"
+		echo "- transmission-cli"
+		echo "- curl"
+		echo "- wget"
+		echo "- netstat"
 		;;
 esac
 

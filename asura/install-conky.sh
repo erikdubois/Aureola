@@ -173,7 +173,7 @@ case $DISTRO in
 	# L M S E N S O R S
 
 
-		# Acros depends on lm-sensors to know the motherboard and manufacturer
+		# This conky depends on lm-sensors to know the heat of your hardware.
 		# check if lm-sensors is installed
 
 		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
