@@ -176,6 +176,10 @@ Included a script to get the latest image for spotify and a logo for the distro.
 
 Not all distro's have the command aptitude. Delete the line if you do not have this.
 
+In Ubuntu Mate 16.04 you can install it via 
+
+	sudo apt-get install aptitude
+
 
 ![Screenshots](http://i.imgur.com/pyZEPdf.png)
 
