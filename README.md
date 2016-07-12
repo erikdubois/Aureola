@@ -172,7 +172,9 @@ A conky first seen from the hand of Jesse Avalos and changed to my needs and wis
 
 # Aureola - Acros
 
-script to get the latest image for spotify and a logo for the distro
+Included a script to get the latest image for spotify and a logo for the distro.
+
+Not all distro's have the command aptitude. Delete the line if you do not have this.
 
 
 ![Screenshots](http://i.imgur.com/pyZEPdf.png)
