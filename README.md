@@ -67,8 +67,10 @@ This script will provide the following steps :
 	- alerting if you want to overwrite the ~/.config/conky files
 	- copy all files of that particular conky to ~/.config/conky
 	- making sure you autostart conky next boot
+	- install the fonts if they are missing- missing fonts just break the conky
 	- checking dependancies and installing the extra software needed for this conky
 	- and last but not least - run the conky
+
 
 
 
