@@ -255,7 +255,12 @@ case $DISTRO in
 		  	sudo chmod u+s /usr/sbin/dmidecode
 
 		  else
+
+		  	echo "################################################################"
 		  	echo "Dmidecode was installed. Proceding..."
+			echo "################################################################"
+			echo "Setting the user rights for dmidecode to be able to use it in conky"
+		  	sudo chmod u+s /usr/sbin/dmidecode
 
 		fi
 
