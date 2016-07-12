@@ -107,6 +107,8 @@ The most recent conky comes first.
 
 This conky came from the need to know my network information and current downloads via transmission torrents.
 
+![Screenshots](http://i.imgur.com/LH6oerv.jpg)
+
 The conky works with the program transmission-cli (command line interface). It will be installed during the installation script. 
 
 After changing the settings in Edit, Preferences, Remote and allowing remote access only to your personal pc aka 127.0.0.1, you can see the current status of your torrent downloads in the conky.
