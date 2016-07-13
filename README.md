@@ -140,6 +140,12 @@ to
 
 	own_window_argb_value = 0,
 
+![Screenshots](http://i.imgur.com/3cDjzEY.png)
+
+Beware!
+
+The other swirly lines are from the wallpaper which is actually perfect for this conky.
+
 
 # Aureola - Gambodekuno
 
