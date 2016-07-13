@@ -198,6 +198,8 @@ to
 
 	own_window_argb_value = 0,
 
+![Screenshots](http://i.imgur.com/fpyOBM5.png)
+
 
 
 # Aureola - Netsense
