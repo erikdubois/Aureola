@@ -182,6 +182,7 @@ So 11 legs.
 	- Top processes that are using the most memory
 	- Power - only on a laptop
 	- White and black color scheme available.
+	- logo's of distro's are available and easy expandable by the user
 
 <b>Examples</b>
 
