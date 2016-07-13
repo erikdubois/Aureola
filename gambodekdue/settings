@@ -1,0 +1,23 @@
+
+# dimensions  1366x748
+WIDTH = 1366;
+HEIGHT = 748;
+
+# network eth0 or wlan0
+NETWORK = enp2s0;
+
+# cpu 2,4,8
+NO_OF_CORES = 2;
+
+# color scheme the values are DARK or WHITE
+# CHANGE IT AND RERUN THE CONKY VIA CONKY-MANAGER
+# change the color of spotify info in the conky file
+# change WHITE INTO DARK - DO NOT ADD AN EXTRA LINE WITH #
+COLOR = WHITE;
+
+# gmail account
+# fill in login and pasword in gmail.sh 
+# LINE 21 NOT used for the moment
+# kept in for future LUA solution
+MAIL = '''fillinlogin''':'''fillinpassword''' https://mail.google.com/mail/feed/atom/unread;
+

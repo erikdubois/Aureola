@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="96.888893"
+   height="100.16768"
+   id="svg2060"
+   sodipodi:version="0.32"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ubuntu-logo.svg">
+  <metadata
+     id="metadata23">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:window-height="1020"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="5.4943174"
+     inkscape:cx="109.62381"
+     inkscape:cy="43.167263"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg2060"
+     showgrid="false"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs2062" />
+  <g
+     id="g4139"
+     style="fill:#b9b9b9;fill-opacity:0.60000002"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <circle
+       cx="9.7445316"
+       cy="50.09185"
+       r="9.7445316"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="circle15" />
+    <circle
+       cx="79.61808"
+       cy="90.423149"
+       r="9.7445316"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="circle17" />
+    <path
+       d="m 56.325832,25.979367 c 12.133673,0 22.200745,9.009741 23.86791,20.690577 l 16.695148,0 C 96.130602,37.491457 92.325279,28.936689 85.963137,22.190064 81.888675,24.265209 76.878636,24.304725 72.622612,21.8483 68.363384,19.388671 65.892007,15.026914 65.654908,10.455827 62.631369,9.7509396 59.507437,9.3856798 56.325832,9.3856798 c -6.091935,0 -11.978811,1.3296732 -17.33275,3.8512472 l 8.358254,14.47689 c 2.77576,-1.11714 5.804639,-1.73445 8.974496,-1.73445 z"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="path19"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 80.19481,53.503078 c -1.662893,11.685109 -11.732101,20.700189 -23.868978,20.700189 -3.171993,0 -6.20194,-0.61731 -8.9777,-1.736585 L 38.98881,86.944639 c 5.352871,2.522642 11.241883,3.853383 17.335954,3.853383 3.183741,0 6.311945,-0.367395 9.336552,-1.072283 0.232827,-4.576427 2.705272,-8.94566 6.967704,-11.406357 4.257092,-2.458562 9.269268,-2.419045 13.344797,-0.339628 6.356802,-6.747693 10.157853,-15.301393 10.914005,-24.476676 l -16.693012,0 z"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="path21"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 32.214416,50.091851 c 0,-7.682203 3.610945,-14.53563 9.223343,-18.953991 L 33.081641,16.663107 c -1.9598,1.36919 -3.813868,2.918874 -5.540841,4.64478 -4.835954,4.835953 -8.303786,10.67477 -10.212322,17.047591 3.84484,2.490602 6.390978,6.81391 6.390978,11.736373 0,4.921395 -2.546138,9.245771 -6.390978,11.735305 1.908536,6.372822 5.376368,12.211638 10.212322,17.047592 1.725905,1.725905 3.577837,3.273453 5.536569,4.643711 L 41.434555,69.042638 C 35.823225,64.624277 32.214416,57.77085 32.214416,50.091851 Z"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="path23"
+       inkscape:connector-curvature="0" />
+    <circle
+       cx="79.609543"
+       cy="9.7445316"
+       r="9.7445316"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="circle25" />
+    <g
+       transform="matrix(1.068011,0,0,1.068011,0,-0.00213689)"
+       style="fill:#b9b9b9;fill-opacity:0.60000002"
+       id="g27" />
+  </g>
+</svg>
