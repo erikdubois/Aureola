@@ -127,7 +127,7 @@ WHITE version via settings file
 
 DARK version via settings file
 
-![Screenshots](hhttp://i.imgur.com/u8p0e64.png)
+![Screenshots](http://i.imgur.com/u8p0e64.png)
 
 Text from spotify and dropbox comes from conky.conf. You can change the colour there if you want.
 Logo can be changed if you so like to do in the main.lua file.
