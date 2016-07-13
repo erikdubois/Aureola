@@ -127,10 +127,10 @@ WHITE version via settings file
 
 DARK version via settings file
 
-![Screenshots](http://i.imgur.com/BfqhzwD.png)
+![Screenshots](hhttp://i.imgur.com/u8p0e64.png)
 
-White text comes from conky.conf. You can change the colour there is you want.
-
+Text from spotify and dropbox comes from conky.conf. You can change the colour there if you want.
+Logo can be changed if you so like to do in the main.lua file.
 
 
 # Aureola - Gambodekuno
