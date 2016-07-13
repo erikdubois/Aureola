@@ -630,7 +630,7 @@ function conky_main(  )
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	if string.match(diskio,'M') then
 		diskio_nr = tonumber(string.sub(diskio, 1, -2));
 		if tonumber(diskio_nr) > 10 then
@@ -940,7 +940,7 @@ function conky_main(  )
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	--if you want to color uncomment or comment these
 if tonumber(new_mail) ~= nil then
 
@@ -1177,7 +1177,7 @@ end
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
 	--if you want to color uncomment or comment these
 	temp_to_number = tonumber(string.sub(temp,2,3))

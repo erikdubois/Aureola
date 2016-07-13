@@ -171,8 +171,16 @@ So 11 legs.
 
 <b>Examples</b>
 
+WHITE version via settings file
+
 ![Screenshots](http://i.imgur.com/Na9alhS.png)
 
+DARK version via settings file
+
+![Screenshots](http://i.imgur.com/sygVLkl.png)
+
+Text from spotify and dropbox comes from conky.conf. You can change the colour there if you want.
+Logo can be changed if you so like to do in the main.lua file.
 
 # Aureola - Netsense
 
