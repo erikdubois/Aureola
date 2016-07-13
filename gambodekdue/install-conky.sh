@@ -339,6 +339,29 @@ case $DISTRO in
 		  	echo "lm-sensors was installed. Proceeding..."
 
 		fi
+
+    # V N S T A T
+
+
+        # The conky depends on vnstat to know the motherboard and manufacturer
+        # check if vnstat is installed
+
+        if ! location="$(type -p "vnstat")" || [ -z "vnstat" ]; then
+
+            echo "################################################################"
+            echo "installing vnstat for this script to work"
+            echo "#################################################################"
+
+            sudo apt-get install vnstat
+
+
+
+          else
+            echo "vnstat was installed. Proceeding..."
+
+        fi
+
+        
 		;;
 
 	Arch)
