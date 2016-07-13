@@ -102,6 +102,29 @@ Whether you install spotify or not is left up to the user. Follow this link and 
 
 The most recent conky comes first.
 
+# Aureolo - Gambodekdue
+
+This conky is based on the Gambodekdue. I deleted the date and time (we have it usually in the bottom-right) and changed some items around in order to have dropbox and clean text when it uploads.
+
+
+<b>Naming</b>
+
+Naming is similar as gambodekuno. 
+
+Gambo is leg. Dek is ten and due is two. So 12 legs.
+
+
+<b>Specifications</b>
+
+Specifications are the same as Gambodekuno  +  Dropbox.
+
+
+<b>Examples</b>
+
+![Screenshots](http://i.imgur.com/KCwGiNL.png)
+
+
+
 # Aureola - Gambodekuno
 
 This is an old conky (octupi) from akshendra. It is mostly written in Lua and was and is a great exercise to learn more of the lua syntax. I have been adding arms to the conky like spotify and others.
