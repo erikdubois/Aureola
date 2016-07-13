@@ -104,7 +104,7 @@ The most recent conky comes first.
 
 # Aureolo - Gambodekdue
 
-This conky is based on the Gambodekuno. I deleted the date and time (we have it usually in the bottom-right) and changed some items around in order to have dropbox and its text when it syncs.
+This conky is based on the Gambodekuno. I deleted the date and time from Gambodekmono. We have it usually somewhere in our panel and changed some items around in order to have dropbox and its text when it syncs.
 
 
 <b>Naming</b>
