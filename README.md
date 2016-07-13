@@ -102,6 +102,45 @@ Whether you install spotify or not is left up to the user. Follow this link and 
 
 The most recent conky comes first.
 
+# Aureola - Gambodekuno
+
+This is an old conky (octupi) from akshendra. It is mostly written in Lua and was and is a great exercise to learn more of the lua syntax. I have been adding arms to the conky like spotify and others.
+
+It is particularly interesting if you have a dual screen.
+
+<b>Naming</b>
+
+Gambodekuno stands for something.
+
+Gambo stands for legs.
+
+Dek is ten and uno is one. 
+
+So 11 legs.
+
+<b>Specifications</b>
+
+	- Coloring of the circles for several items like cpu, disk i/o.
+	- Temperature of your cpu
+	- If you put in your login and pasword in a file, you will see how many unread mails you have.
+	- ip adress
+	- speed of up and download
+	- usage of network today, month, total
+	- cpu usage
+	- cpu top 10 processes
+	- swap use in percentage
+	- spotify - title, album and picture
+	- uptime of computer
+	- Home free and total in GB
+	- Disk i/o speed
+	- Ram usage in percentage
+	- Top processes that are using the most memory
+	- Power - only on a laptop
+
+<b>Examples</b>
+
+![Screenshots](http://i.imgur.com/Na9alhS.png)
+
 
 # Aureola - Netsense
 
