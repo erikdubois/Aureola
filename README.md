@@ -132,6 +132,14 @@ DARK version via settings file
 Text from spotify and dropbox comes from conky.conf. You can change the colour there if you want.
 Logo can be changed if you so like to do in the main.lua file.
 
+If you do not like the black transparant look in the background, change these lines in the conky.config file
+
+	own_window_argb_value = 150,
+
+to
+
+	own_window_argb_value = 0,
+
 
 # Aureola - Gambodekuno
 
@@ -181,6 +189,16 @@ DARK version via settings file
 
 Text from spotify and dropbox comes from conky.conf. You can change the colour there if you want.
 Logo can be changed if you so like to do in the main.lua file.
+
+If you do not like the black transparant look in the background, change these lines in the conky.config file
+
+	own_window_argb_value = 150,
+
+to
+
+	own_window_argb_value = 0,
+
+
 
 # Aureola - Netsense
 
