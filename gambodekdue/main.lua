@@ -519,13 +519,13 @@ function conky_main(  )
 	-- arrow to ram
 	cairo_move_to(cr, item_startx, item_starty);
 	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-70, item_endx, item_endy);
-	set_color(1,0.5);
+	set_color(1,0.4);
 	cairo_stroke(cr);
 	
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
 	ram_nr = tonumber(string.sub(ram,1,2))
 	if ram_nr > 50 then
@@ -695,7 +695,7 @@ function conky_main(  )
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	if string.match(diskio,'M') then
 		diskio_nr = tonumber(string.sub(diskio, 1, -2));
 		if tonumber(diskio_nr) > 10 then
@@ -1194,7 +1194,7 @@ function conky_main(  )
 	-- background circle
 	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
 	set_color(1,0.4);
-	cairo_set_source_rgba(cr,1,1,1,0.4);
+	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
 	--if you want to color uncomment or comment these
 	temp_to_number = tonumber(string.sub(temp,2,3))

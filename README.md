@@ -121,13 +121,21 @@ Specifications are the same as Gambodekuno  +  Dropbox.
 
 <b>Examples</b>
 
+WHITE version via settings file
+
 ![Screenshots](http://i.imgur.com/KCwGiNL.png)
+
+DARK version via settings file
+
+![Screenshots](http://i.imgur.com/BfqhzwD.png)
+
+White text comes from conky.conf. You can change the colour there is you want.
 
 
 
 # Aureola - Gambodekuno
 
-This is an old conky (octupi) from akshendra. It is mostly written in Lua and was and is a great exercise to learn more of the lua syntax. I have been adding arms to the conky like spotify and others.
+This is an old conky (octupi) from akshendra. https://github.com/akshendra/octupi-conky. It is mostly written in Lua and was and is a great exercise to learn more of the lua syntax. I have been adding arms to the conky like spotify and others.
 
 It is particularly interesting if you have a dual screen.
 
@@ -159,6 +167,7 @@ So 11 legs.
 	- Ram usage in percentage
 	- Top processes that are using the most memory
 	- Power - only on a laptop
+	- White and black color scheme available.
 
 <b>Examples</b>
 

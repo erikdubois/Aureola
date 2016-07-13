@@ -13,7 +13,7 @@ NO_OF_CORES = 2;
 # CHANGE IT AND RERUN THE CONKY VIA CONKY-MANAGER
 # change the color of spotify info in the conky file
 # change WHITE INTO DARK - DO NOT ADD AN EXTRA LINE WITH #
-COLOR = WHITE;
+COLOR = DARK;
 
 # gmail account
 # fill in login and pasword in gmail.sh 
