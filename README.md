@@ -211,6 +211,13 @@ to
 
 If you just installed <b>vnstat</b> for the first time, you will not have enough date to display information. After a few hours the database gets populated and it will show up under the IP leg.
 
+Some of the icons can change their colour if cpu > 20 or >40 etc.
+
+Here is a picture where the DISK I/O changes colour. You can edit the levels and the colours in the lua.
+
+![Screenshots](http://i.imgur.com/dmHqCYt.png)
+
+
 
 # Aureola - Netsense
 
