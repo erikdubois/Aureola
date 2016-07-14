@@ -146,6 +146,8 @@ Beware!
 
 The other swirly lines are from the wallpaper which is actually perfect for this conky.
 
+If you just installed <b>vnstat</b> for the first time, you will not have enough date to display information. After a few hours the database gets populated and it will show up under the IP leg.
+
 
 # Aureola - Gambodekuno
 
@@ -207,6 +209,7 @@ to
 
 ![Screenshots](http://i.imgur.com/fpyOBM5.png)
 
+If you just installed <b>vnstat</b> for the first time, you will not have enough date to display information. After a few hours the database gets populated and it will show up under the IP leg.
 
 
 # Aureola - Netsense
