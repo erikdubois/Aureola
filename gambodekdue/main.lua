@@ -111,6 +111,8 @@ function conky_main(  )
 	-- getting the path of the conky
 	local pathway = script_path()
 
+	temp_to_number = 0
+
 
 	-- setup variables for web based content
 	local min = tonumber(conky_parse('${time %M}'));
@@ -1028,8 +1030,7 @@ function conky_main(  )
 
 	-- check your computer with command sensors to see if "Core 0" exists
 	local temp = conky_parse("${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}");
-	--temp_to_number = tonumber(string.sub(temp,string.find(temp,"%d%d")))
-
+	
 	-- arrow to temp
 	cairo_move_to(cr, item_startx, item_starty);
 	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-70, item_endx, item_endy);
@@ -1041,15 +1042,26 @@ function conky_main(  )
 	set_color(1,0.4);
 	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
-	--if you want to color uncomment or comment these
-	--temp_to_number = tonumber(string.sub(temp,2,3))
+	-- First I get an error
+	-- conky: llua_do_call: function conky_main execution failed: /home/erik/.config/conky/main.lua:1051
+	-- i believe this because the conky script is not fast enough to fill the variable
+	-- now a check if it is nil or not
+
+	temp_to_number = tonumber(string.sub(temp,2,3))
+
+	if temp_to_number ~= nil then
 	
-	--if temp_to_number > 50 then
-	--	cairo_set_source_rgba(cr,0,1,0,0.4);
-	--end
-	--if temp_to_number > 70 then
-	--	cairo_set_source_rgba(cr,1,0,0,0.6);
-	--end
+		if temp_to_number > 50 then
+			cairo_set_source_rgba(cr,0,1,0,0.4);
+		end
+
+		if temp_to_number > 60 then
+			cairo_set_source_rgba(cr,0,0,1,0.4);
+		end
+		if temp_to_number > 70 then
+			cairo_set_source_rgba(cr,1,0,0,0.6);
+		end
+	end
 
 	cairo_fill(cr);
 
