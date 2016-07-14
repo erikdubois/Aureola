@@ -45,7 +45,8 @@ function conky_setup(  )
 
 	-- getting the path of the conky
 	local pathway = script_path()
-	print (pathway)
+	--print (pathway)
+
 	-- opening the settings file for reading the variabes
 	local file = io.open(pathway.."settings");
 	local output = file:read("*a");
@@ -984,7 +985,7 @@ function conky_main(  )
 		--current solution
 		--or solution via bash code
 		--fill in login and password in gmail.sh in Octupi folder
-		new_mail = conky_parse("${execi 300 bash gmail.sh}");
+		new_mail = conky_parse("${execi 300 bash "..pathway.."gmail.sh}");
 				
 		end
 		check_mail = 0;
@@ -1214,14 +1215,14 @@ function conky_main(  )
 	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
 	--if you want to color uncomment or comment these
-	temp_to_number = tonumber(string.sub(temp,2,3))
+	--temp_to_number = tonumber(string.sub(temp,2,3))
 	
-	if temp_to_number > 50 then
-		cairo_set_source_rgba(cr,0,1,0,0.4);
-	end
-	if temp_to_number > 70 then
-		cairo_set_source_rgba(cr,1,0,0,0.6);
-	end
+	--if temp_to_number > 50 then
+	--	cairo_set_source_rgba(cr,0,1,0,0.4);
+	--end
+	--if temp_to_number > 70 then
+	--	cairo_set_source_rgba(cr,1,0,0,0.6);
+	--end
 
 	cairo_fill(cr);
 

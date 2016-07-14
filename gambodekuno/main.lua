@@ -43,8 +43,12 @@ end
 --  the funtion which will be called at the beginning of the run, used to setup a few global values
 function conky_setup(  )
 
+	-- getting the path of the conky
+	local pathway = script_path()
+	--print (pathway)
+	
 	-- opening the settings file for reading the variabes
-	local file = io.open("settings");
+	local file = io.open(pathway.."settings");
 	local output = file:read("*a");
 	io.close(file);
 	
@@ -72,6 +76,16 @@ function conky_setup(  )
 
 end
 
+
+
+-- the function to get the absolute path where the conky is
+
+function script_path()
+   local str = debug.getinfo(2, "S").source:sub(2)
+   return str:match("(.*/)")
+end
+
+
 function conky_main(  )
 	
 	-- if no conky window then exit
@@ -94,6 +108,9 @@ function conky_main(  )
 	local centerx = width/2;
 	local centery = height/2;
 
+	-- getting the path of the conky
+	local pathway = script_path()
+
 	-- setup variables for web based content
 	local min = tonumber(conky_parse('${time %M}'));
 	local sec = tonumber(conky_parse('${time %S}'));
@@ -108,7 +125,7 @@ function conky_main(  )
 
 	-- image
 	local ir = cairo_create(cs);
-	draw_image(ir, centerx, centery, face_radius, "linuxmint");
+	draw_image(ir, centerx, centery, face_radius, pathway.."linuxmint");
 	--draw_image(ir, centerx, centery, face_radius, "ubuntu_1"); 
 	--draw_image(ir, centerx, centery, face_radius, "ubuntu_2);
 	--draw_image(ir, centerx, centery, face_radius, "linux_mint_1");
@@ -175,10 +192,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	local image_path = "cpu";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -340,10 +357,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "swap";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -402,10 +419,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "uptime";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -465,10 +482,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "root";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -531,10 +548,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "ram";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -647,10 +664,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "root";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -745,10 +762,10 @@ function conky_main(  )
 	local ir = cairo_create(cs);
 	image_path = "network";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -904,7 +921,7 @@ function conky_main(  )
 		--current solution
 		--or solution via bash code
 		--fill in login and password in gmail.sh in Octupi folder
-		new_mail = conky_parse("${execi 300 bash gmail.sh}");
+		new_mail = conky_parse("${execi 300 bash "..pathway.."gmail.sh}");
 				
 		end
 		check_mail = 0;
@@ -962,10 +979,10 @@ end
 	local ir = cairo_create(cs);
 	image_path = "mail";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -1022,10 +1039,10 @@ end
 	local ir = cairo_create(cs);
 	image_path = "battery";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -1053,10 +1070,10 @@ end
 		local ir = cairo_create(cs);
 		image_path = "nobattery";
 		if color == "WHITE" then
-			image_path = "white/"..image_path
+			image_path = pathway.."white/"..image_path
 		end
 		if color == "DARK" then
-			image_path = "dark/"..image_path
+			image_path = pathway.."dark/"..image_path
 		end
 	draw_image(ir, item_centerx+2, item_centery+30, item_radius-4, image_path);
 	end
@@ -1125,10 +1142,10 @@ end
 	local ir = cairo_create(cs);
 	image_path = "spotify";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
@@ -1180,13 +1197,13 @@ end
 	--cairo_set_source_rgba(cr,1,1,1,0.4);
 	
 	--if you want to color uncomment or comment these
-	temp_to_number = tonumber(string.sub(temp,2,3))
-	if temp_to_number > 50 then
-		cairo_set_source_rgba(cr,0,1,0,0.4);
-	end
-	if temp_to_number > 70 then
-		cairo_set_source_rgba(cr,1,0,0,0.6);
-	end
+	--temp_to_number = tonumber(string.sub(temp,2,3))
+	--if temp_to_number > 50 then
+	--	cairo_set_source_rgba(cr,0,1,0,0.4);
+	--end
+	--if temp_to_number > 70 then
+	--	cairo_set_source_rgba(cr,1,0,0,0.6);
+	--end
 
 	cairo_fill(cr);
 
@@ -1194,10 +1211,10 @@ end
 	local ir = cairo_create(cs);
 	image_path = "temp";
 	if color == "WHITE" then
-		image_path = "white/"..image_path
+		image_path = pathway.."white/"..image_path
 	end
 	if color == "DARK" then
-		image_path = "dark/"..image_path
+		image_path = pathway.."dark/"..image_path
 	end
 	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
 
