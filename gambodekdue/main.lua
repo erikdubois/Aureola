@@ -793,179 +793,6 @@ function conky_main(  )
 	cairo_move_to(cr, item_endx - extents.width/2, item_endy+item_font_size*2+2);
 	cairo_show_text(cr,text);
 
-
-	-- network ----------------------------------------------------------------------- network -------------------------------------------------------------------------
-
-	local angle = 330*math.pi/180;
-	local item_startx = centerx + math.cos(angle) * face_radius;
-	local item_starty = centery + math.sin(angle) * face_radius;
-	local item_endx = centerx + math.cos(angle) * width/6;
-	local item_endy = centery + math.sin(angle) * height/6;
-	local item_curvex = centerx + math.cos(angle) * width/12;
-	local item_curvey = centery + math.sin(angle) * height/12;
-	local item_radius = 15;
-	local item_centerx = item_endx + math.cos(angle) * (item_radius + 5);
-	local item_centery = item_endy + math.sin(angle) * (item_radius + 5);
-	local item_font_size = height/50;
-
-	-- ip address interface enp2s0 or wlan0 is filled in settings
-	local network = conky_parse("${addr "..interface.."}");
-
-	-- arrow to network
-	cairo_move_to(cr, item_startx, item_starty);
-	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-70, item_endx, item_endy);
-	set_color(1,0.5);
-	cairo_stroke(cr);
-
-	-- background circle
-	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
-	set_color(1,0.4);
-	cairo_fill(cr);
-
-	-- image
-	local ir = cairo_create(cs);
-	image_path = "network";
-	if color == "WHITE" then
-		image_path = pathway.."white/"..image_path
-	end
-	if color == "DARK" then
-		image_path = pathway.."dark/"..image_path
-	end
-	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
-
-	-- outside boundry
-	cairo_arc(cr, item_centerx, item_centery, item_radius + 5,  0, 2*math.pi );
-	set_color(1,1);
-	cairo_stroke(cr);
-
-	-- font settings
-	set_color(1,1);
-	cairo_select_font_face(cr, "Inconsolata", 0 , 1);
-	cairo_set_font_size(cr, item_font_size);
-
-	-- name text
-	text = "IP";
-	cairo_text_extents(cr, text, extents)
-	cairo_move_to(cr, item_centerx - extents.width/2, item_centery - item_radius - 10);
-	cairo_show_text(cr, text);
-
-	-- value text
-	text = network;
-	cairo_text_extents(cr, text, extents)
-	cairo_move_to(cr, item_centerx - extents.width/2, item_centery + item_radius + item_font_size + 8);
-	cairo_show_text(cr, text);
-
-
-	-- network stats ------------------------------------------------ network stats -------------------------------------------------------------
-
-	angle = angle - 10*(math.pi/180);
-	item_startx = item_centerx + item_radius + 5;	
-	item_starty = item_centery;
-	item_endx = item_startx + math.cos(angle) * width/6;
-	item_endy = item_starty + math.sin(angle) * height/6;
-	item_curvex = item_startx + math.cos(angle) * width/12;
-	item_curvey = item_starty + math.sin(angle) * height/12;
-	-- print(item_startx.." "..item_starty.." "..item_endx.." "..item_endy.." "..item_curvex.." "..item_curvey)
-
-	-- arrow
-	cairo_move_to(cr, item_startx, item_starty);
-	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-100, item_endx, item_endy);
-	set_color(1,0.5);
-	cairo_stroke(cr);
-
-	set_color(1,1);
-	cairo_move_to(cr,item_endx,item_endy+item_font_size+5);
-	cairo_show_text(cr,"Upload");
-	cairo_move_to(cr,item_endx + width/15,item_endy+item_font_size+5);
-	cairo_show_text(cr,"Download");
-	cairo_move_to(cr,item_endx - width/20,item_endy+item_font_size*2+5);
-	cairo_show_text(cr, "Now");	
-	
-	cairo_select_font_face(cr,"Inconsolata",0,0)
-	cairo_set_font_size(cr,item_font_size/1.4);
-	set_color(1,0.6);
-	text = conky_parse("${upspeed "..interface.."}");
-	cairo_move_to(cr,item_endx  ,item_endy+item_font_size*2+5);
-	cairo_show_text(cr, text);
-	text = conky_parse("${downspeed "..interface.."}");
-	cairo_move_to(cr,item_endx + width/15,item_endy+item_font_size*2+5);
-	cairo_show_text(cr, text);	
-
-	
-	local month = conky_parse("${time %b}");
-	local year = conky_parse("${time %y}");
-	local stats = conky_parse("${execi 10 vnstat -i "..interface.."}");
-	local ntotal_recieved, ntotal_trans, nmonth_received, nmonth_trans, ntoday_rec, ntoday_trans;
-	-- print(stats);
-	if(stats ~= "") then
-		_,nex,ntotal_recieved = string.find(stats, "rx:%s*(.-)iB");
-		if(ntotal_recieved ~= nil ) then
-			total_recieved = ntotal_recieved;
-		end
-		-- print("tr: "..total_recieved.."iB");
-		_,nex,ntotal_trans = string.find(stats, "tx:%s*(.-)iB",nex);
-		if(ntotal_trans ~= nil) then
-			total_trans = ntotal_trans;
-		end
-		-- print("tt: "..total_trans..'iB');
-
-		_,nex,_ = string.find(stats, "monthly",nex);
-
-		_,nex,nmonth_received = string.find(stats, month.."%s*\'"..year.."%s*(.-)iB",nex);
-		if(nmonth_received ~= nil) then
-			month_recieved = nmonth_received;
-		end
-		-- print("mr: "..month_recieved..'iB');
-
-		_,nex,nmonth_trans = string.find(stats, "|%s*(.-)iB",nex);
-		if(nmonth_trans ~= nil) then
-			month_trans = nmonth_trans;
-		end
-		-- print("mt: "..month_trans..'iB');
-
-		_,nex,ntoday_rec = string.find(stats, "today%s*(.-)iB",nex);
-		if(ntoday_rec ~= nil) then
-			today_rec = ntoday_rec;
-		end
-		-- print("tor: "..today_rec..'iB');
-
-		_,nex,ntoday_trans = string.find(stats, "|%s*(.-)iB",nex);
-		if(ntoday_trans ~= nil) then
-			today_trans = ntoday_trans;
-		end
-		-- print("tot: "..today_trans..'iB');
-
-		cairo_set_font_size(cr, item_font_size);
-		cairo_select_font_face(cr, "Inconsolata",0,1);
-		set_color(1,1);
-		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*3+5);
-		cairo_show_text(cr,"Today");
-		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*4+5);
-		cairo_show_text(cr,"Month");
-		cairo_move_to(cr,200,220);
-		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*5+5);
-		cairo_show_text(cr,"Total");
-
-		cairo_select_font_face(cr,"Inconsolata",0,0)
-		cairo_set_font_size(cr,item_font_size/1.4);
-		set_color(1,0.6);
-		cairo_move_to(cr,item_endx ,item_endy+item_font_size*3+5);
-		cairo_show_text(cr,today_trans.."iB");
-		cairo_move_to(cr,item_endx ,item_endy+item_font_size*4+5);
-		cairo_show_text(cr,month_trans.."iB");
-		cairo_move_to(cr,item_endx ,item_endy+item_font_size*5+5);
-		cairo_show_text(cr,total_trans.."iB");
-
-
-		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*3+5);
-		cairo_show_text(cr, today_rec.."iB");
-		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*4+5);
-		cairo_show_text(cr,month_recieved.."iB");
-		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*5+5);
-		cairo_show_text(cr,total_recieved.."iB");
-	end
-
-
 	-- gmail --------------------------------------------------------------- gmail new message -------------------------------------------------------------
 
 	if (min*60 + sec)%298 == 0 then
@@ -1258,6 +1085,182 @@ function conky_main(  )
 	cairo_text_extents(cr, text, extents)
 	cairo_move_to(cr, item_centerx - extents.width/2, item_centery + item_radius + item_font_size + 8);
 	cairo_show_text(cr, text);
+
+
+
+	-- network ----------------------------------------------------------------------- network -------------------------------------------------------------------------
+
+	local angle = 330*math.pi/180;
+	local item_startx = centerx + math.cos(angle) * face_radius;
+	local item_starty = centery + math.sin(angle) * face_radius;
+	local item_endx = centerx + math.cos(angle) * width/6;
+	local item_endy = centery + math.sin(angle) * height/6;
+	local item_curvex = centerx + math.cos(angle) * width/12;
+	local item_curvey = centery + math.sin(angle) * height/12;
+	local item_radius = 15;
+	local item_centerx = item_endx + math.cos(angle) * (item_radius + 5);
+	local item_centery = item_endy + math.sin(angle) * (item_radius + 5);
+	local item_font_size = height/50;
+
+	-- ip address interface enp2s0 or wlan0 is filled in settings
+	local network = conky_parse("${addr "..interface.."}");
+
+	-- arrow to network
+	cairo_move_to(cr, item_startx, item_starty);
+	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-70, item_endx, item_endy);
+	set_color(1,0.5);
+	cairo_stroke(cr);
+
+	-- background circle
+	cairo_arc(cr, item_centerx, item_centery, item_radius+5,  0, 2*math.pi );
+	set_color(1,0.4);
+	cairo_fill(cr);
+
+	-- image
+	local ir = cairo_create(cs);
+	image_path = "network";
+	if color == "WHITE" then
+		image_path = pathway.."white/"..image_path
+	end
+	if color == "DARK" then
+		image_path = pathway.."dark/"..image_path
+	end
+	draw_image(ir, item_centerx, item_centery, item_radius, image_path);
+
+	-- outside boundry
+	cairo_arc(cr, item_centerx, item_centery, item_radius + 5,  0, 2*math.pi );
+	set_color(1,1);
+	cairo_stroke(cr);
+
+	-- font settings
+	set_color(1,1);
+	cairo_select_font_face(cr, "Inconsolata", 0 , 1);
+	cairo_set_font_size(cr, item_font_size);
+
+	-- name text
+	text = "IP";
+	cairo_text_extents(cr, text, extents)
+	cairo_move_to(cr, item_centerx - extents.width/2, item_centery - item_radius - 10);
+	cairo_show_text(cr, text);
+
+	-- value text
+	text = network;
+	cairo_text_extents(cr, text, extents)
+	cairo_move_to(cr, item_centerx - extents.width/2, item_centery + item_radius + item_font_size + 8);
+	cairo_show_text(cr, text);
+
+
+	-- network stats ------------------------------------------------ network stats -------------------------------------------------------------
+
+	angle = angle - 10*(math.pi/180);
+	item_startx = item_centerx + item_radius + 5;	
+	item_starty = item_centery;
+	item_endx = item_startx + math.cos(angle) * width/6;
+	item_endy = item_starty + math.sin(angle) * height/6;
+	item_curvex = item_startx + math.cos(angle) * width/12;
+	item_curvey = item_starty + math.sin(angle) * height/12;
+	-- print(item_startx.." "..item_starty.." "..item_endx.." "..item_endy.." "..item_curvex.." "..item_curvey)
+
+	-- arrow
+	cairo_move_to(cr, item_startx, item_starty);
+	cairo_curve_to(cr, item_curvex, item_curvey, item_curvex, item_curvey-100, item_endx, item_endy);
+	set_color(1,0.5);
+	cairo_stroke(cr);
+
+	set_color(1,1);
+	cairo_move_to(cr,item_endx,item_endy+item_font_size+5);
+	cairo_show_text(cr,"Upload");
+	cairo_move_to(cr,item_endx + width/15,item_endy+item_font_size+5);
+	cairo_show_text(cr,"Download");
+	cairo_move_to(cr,item_endx - width/20,item_endy+item_font_size*2+5);
+	cairo_show_text(cr, "Now");	
+	
+	cairo_select_font_face(cr,"Inconsolata",0,0)
+	cairo_set_font_size(cr,item_font_size/1.4);
+	set_color(1,0.6);
+	text = conky_parse("${upspeed "..interface.."}");
+	cairo_move_to(cr,item_endx  ,item_endy+item_font_size*2+5);
+	cairo_show_text(cr, text);
+	text = conky_parse("${downspeed "..interface.."}");
+	cairo_move_to(cr,item_endx + width/15,item_endy+item_font_size*2+5);
+	cairo_show_text(cr, text);	
+
+	
+	local month = conky_parse("${time %b}");
+	local year = conky_parse("${time %y}");
+	local stats = conky_parse("${execi 10 vnstat -i "..interface.."}");
+	local ntotal_recieved, ntotal_trans, nmonth_received, nmonth_trans, ntoday_rec, ntoday_trans;
+	-- print(stats);
+	if(stats ~= "") then
+		_,nex,ntotal_recieved = string.find(stats, "rx:%s*(.-)iB");
+		if(ntotal_recieved ~= nil ) then
+			total_recieved = ntotal_recieved;
+		end
+		-- print("tr: "..total_recieved.."iB");
+		_,nex,ntotal_trans = string.find(stats, "tx:%s*(.-)iB",nex);
+		if(ntotal_trans ~= nil) then
+			total_trans = ntotal_trans;
+		end
+		-- print("tt: "..total_trans..'iB');
+
+		_,nex,_ = string.find(stats, "monthly",nex);
+
+		_,nex,nmonth_received = string.find(stats, month.."%s*\'"..year.."%s*(.-)iB",nex);
+		if(nmonth_received ~= nil) then
+			month_recieved = nmonth_received;
+		end
+		-- print("mr: "..month_recieved..'iB');
+
+		_,nex,nmonth_trans = string.find(stats, "|%s*(.-)iB",nex);
+		if(nmonth_trans ~= nil) then
+			month_trans = nmonth_trans;
+		end
+		-- print("mt: "..month_trans..'iB');
+
+		_,nex,ntoday_rec = string.find(stats, "today%s*(.-)iB",nex);
+		if(ntoday_rec ~= nil) then
+			today_rec = ntoday_rec;
+		end
+		-- print("tor: "..today_rec..'iB');
+
+		_,nex,ntoday_trans = string.find(stats, "|%s*(.-)iB",nex);
+		if(ntoday_trans ~= nil) then
+			today_trans = ntoday_trans;
+		end
+		-- print("tot: "..today_trans..'iB');
+
+		cairo_set_font_size(cr, item_font_size);
+		cairo_select_font_face(cr, "Inconsolata",0,1);
+		set_color(1,1);
+		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*3+5);
+		cairo_show_text(cr,"Today");
+		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*4+5);
+		cairo_show_text(cr,"Month");
+		cairo_move_to(cr,200,220);
+		cairo_move_to(cr,item_endx-width/20 ,item_endy+item_font_size*5+5);
+		cairo_show_text(cr,"Total");
+
+		cairo_select_font_face(cr,"Inconsolata",0,0)
+		cairo_set_font_size(cr,item_font_size/1.4);
+		set_color(1,0.6);
+		cairo_move_to(cr,item_endx ,item_endy+item_font_size*3+5);
+		cairo_show_text(cr,today_trans.."iB");
+		cairo_move_to(cr,item_endx ,item_endy+item_font_size*4+5);
+		cairo_show_text(cr,month_trans.."iB");
+		cairo_move_to(cr,item_endx ,item_endy+item_font_size*5+5);
+		cairo_show_text(cr,total_trans.."iB");
+
+
+		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*3+5);
+		cairo_show_text(cr, today_rec.."iB");
+		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*4+5);
+		cairo_show_text(cr,month_recieved.."iB");
+		cairo_move_to(cr,item_endx + width/15 ,item_endy+item_font_size*5+5);
+		cairo_show_text(cr,total_recieved.."iB");
+	end
+
+
+
 
 
 	-- destroying the cairo surface
