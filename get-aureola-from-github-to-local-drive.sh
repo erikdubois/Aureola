@@ -145,7 +145,7 @@ echo "Check if there is a ~/.aureola folder else make one"
 
 # removing all the old files that may be in .aureola with confirm deletion
 
-if find ~/.aureola -mindepth 1 | read ; then
+if find ~/.aureola -mindepth 1 > /dev/null ; then
 
 	read -p "Everything in folder ~/.aureola will be deleted. Are you sure? (y/n)?" choice
 	case "$choice" in 
