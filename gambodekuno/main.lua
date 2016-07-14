@@ -1104,7 +1104,7 @@ end
 	local item_endx = centerx + math.cos(angle) * width/6;
 	local item_endy = centery + math.sin(angle) * height/6;
 	local item_curvex = centerx + math.cos(angle) * width/12;
-	local item_curvey = centery + math.sin(angle) * height/12;
+	local item_curvey = centery + math.sin(angle) * height/10;
 	local item_radius = 15;
 	local item_centerx = item_endx + math.cos(angle) * (item_radius + 5);
 	local item_centery = item_endy + math.sin(angle) * (item_radius + 5);
