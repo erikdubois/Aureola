@@ -13,7 +13,7 @@
 
 #first_cover=""
 	#file="~/.config/conky/cover.txt"
-	old_cover=$(<cover.txt)
+	old_cover=$(< ~/.config/conky/cover.txt)
 	#echo $old_cover
 	new_cover=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "artUrl"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$)
 	#echo $old_cover
@@ -23,7 +23,7 @@
 	then
 		old_cover="$new_cover"
 		wget -O ~/.config/conky/last_album_pic.png $new_cover
-		echo $old_cover > cover.txt
+		echo $old_cover > ~/.config/conky/cover.txt
 		#echo $old_cover
 	fi
 kill
