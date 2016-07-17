@@ -17,6 +17,9 @@ To get al these conky's to your computer, run the script
 
 	- get-aureola-from-github-to-local-drive.sh
 
+<b>YOU HAVE TO DO THIS ! </b>
+
+The scripts will copy the code from ~/.aurela folder to ~/.config/conky folder
 
 This script will take care of :
 
