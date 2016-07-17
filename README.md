@@ -97,6 +97,15 @@ Whether you install spotify or not is left up to the user. Follow this link and 
 	https://www.spotify.com/nl/download/linux/
 
 
+# Dual-screen users
+
+use the following code in your config file
+
+	xinerama_head = 3,  						-- for dual screen
+
+You can use other integers 1,2,3. 3 was the solution for me.
+
+
 
 # OVERVIEW OF THE CURRENT COLLECTION
 
