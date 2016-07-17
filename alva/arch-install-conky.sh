@@ -158,7 +158,7 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="SourceSansPro-ExtraLight"
+FONT="Decker"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -289,19 +289,34 @@ case $DISTRO in
 
 	Arch)
 
-		echo "You are using an arch machine"
-		echo "For this conky to work fully"
-		echo "you need to install the following packages"
-		echo "- conky-lua"
-		echo "- dmidecode"
-		echo "- lm-sensors"
+	# C O N K Y
+
+		# check if conky is installed
+		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
+
+			echo "################################################################"
+			echo "installing conky for this script to work"
+			echo "################################################################"
+
+		  	packer conky-lua-nv --noedit
+
+		  else
+		  	echo "Conky was installed. Proceeding..."
+		  	echo "Make sure you have the LUA version installed to see"
+		  	echo "graphical conky's."
+		fi
+
+
 		;;
+
 
 	*)
 		echo "No dependancies installed."
 		echo "No installation lines for your system."
 		;;
 esac
+
+
 
 ##################################################################################################################
 ########################                    S T A R T  O F  C O N K Y                   ##########################

@@ -93,13 +93,13 @@ sleep 1
 
 
 # if there is no hidden folder autostart then make one
-[ -d $HOME"/./config/autostart" ] || mkdir -p $HOME"/.config/autostart"
+[ -d $HOME"/.config/autostart" ] || mkdir -p $HOME"/.config/autostart"
 
 # if there is no hidden folder conky then make one
-[ -d $HOME"/./config/conky" ] || mkdir -p $HOME"/.config/conky"
+[ -d $HOME"/.config/conky" ] || mkdir -p $HOME"/.config/conky"
 
 # if there is no hidden folder fonts then make one
-[ -d $HOME"/./fonts" ] || mkdir -p $HOME"/.fonts"
+[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 
 
 

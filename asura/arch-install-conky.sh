@@ -154,11 +154,10 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ##################################################################################################################
 
 
-
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="SourceSansPro-ExtraLight"
+FONT="GeosansLight"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -194,7 +193,6 @@ else
     fi
 
 fi
-
 
 
 
@@ -236,72 +234,39 @@ case $DISTRO in
 		  	echo "Conky was installed. Proceeding..."
 		fi
 
-	# D M I D E C O D E
-
-
-		# The conky depends on dmidecode to know the motherboard and manufacturer
-		# check if dmidecode is installed
-
-		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
-
-			echo "################################################################"
-			echo "installing dmidecode for this script to work"
-			echo "#################################################################"
-
-		  	sudo apt-get install dmidecode
-
-		  	#without this line dmidecode will not work - it needs sudo
-
-		  	sudo chmod u+s /usr/sbin/dmidecode
-
-		  else
-
-		  	echo "################################################################"
-		  	echo "Dmidecode was installed. Proceeding..."
-			echo "################################################################"
-			echo "Setting the user rights for dmidecode to be able to use it in conky"
-		  	sudo chmod u+s /usr/sbin/dmidecode
-
-		fi
-
-
-	# L M S E N S O R S
-
-
-		# The conky depends on lm-sensors to know the motherboard and manufacturer
-		# check if lm-sensors is installed
-
-		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
-
-			echo "################################################################"
-			echo "installing lm-sensors for this script to work"
-			echo "#################################################################"
-
-		  	sudo apt-get install lm-sensors
-
-
-
-		  else
-		  	echo "lm-sensors was installed. Proceeding..."
-
-		fi
+	
 		;;
 
 	Arch)
 
-		echo "You are using an arch machine"
-		echo "For this conky to work fully"
-		echo "you need to install the following packages"
-		echo "- conky-lua"
-		echo "- dmidecode"
-		echo "- lm-sensors"
+	# C O N K Y
+
+		# check if conky is installed
+		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
+
+			echo "################################################################"
+			echo "installing conky for this script to work"
+			echo "################################################################"
+
+		  	packer conky-lua-nv --noedit
+
+		  else
+		  	echo "Conky was installed. Proceeding..."
+		  	echo "Make sure you have the LUA version installed to see"
+		  	echo "graphical conky's."
+		fi
+
+	
 		;;
+
 
 	*)
 		echo "No dependancies installed."
 		echo "No installation lines for your system."
 		;;
 esac
+
+
 
 ##################################################################################################################
 ########################                    S T A R T  O F  C O N K Y                   ##########################
