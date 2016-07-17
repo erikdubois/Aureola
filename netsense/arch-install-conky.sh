@@ -154,11 +154,94 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ##################################################################################################################
 
 
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
 
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="Decker"
+FONT="NotoMono-Regular"
+
+
+if fc-list | grep -i $FONT >/dev/null; then
+
+	echo "################################################################" 
+    echo "The font is already available. Proceeding ...";
+
+else
+	echo "################################################################" 
+    echo "The font is not currently installed, would you like to install it now? (y/n)";
+    read response
+    if [[ "$response" == [yY] ]]; then
+        echo "Installing the font to the ~/.fonts directory.";
+        cp ~/.config/conky/fonts/* ~/.fonts
+        echo "################################################################" 
+        echo "Building new fonts into the cache files";
+        echo "Depending on the number of fonts, this may take a while..." 
+        fc-cache -fv ~/.fonts
+		echo "################################################################" 
+		echo "Check if the cache build was successful?";    
+        if fc-list | grep -i $FONT >/dev/null; then
+            echo "################################################################" 
+            echo "The font was sucessfully installed!";
+        else
+        	echo "################################################################" 
+            echo "Something went wrong while trying to install the font.";
+        fi
+    else
+    	echo "################################################################" 	
+        echo "Skipping the installation of the font.";
+        echo "Please note that this conky configuration will not work";
+        echo "correctly without the font.";
+    fi
+
+fi
+
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
+FONT="webdings"
+
+
+if fc-list | grep -i $FONT >/dev/null; then
+
+	echo "################################################################" 
+    echo "The font is already available. Proceeding ...";
+
+else
+	echo "################################################################" 
+    echo "The font is not currently installed, would you like to install it now? (y/n)";
+    read response
+    if [[ "$response" == [yY] ]]; then
+        echo "Installing the font to the ~/.fonts directory.";
+        cp ~/.config/conky/fonts/* ~/.fonts
+        echo "################################################################" 
+        echo "Building new fonts into the cache files";
+        echo "Depending on the number of fonts, this may take a while..." 
+        fc-cache -fv ~/.fonts
+		echo "################################################################" 
+		echo "Check if the cache build was successful?";    
+        if fc-list | grep -i $FONT >/dev/null; then
+            echo "################################################################" 
+            echo "The font was sucessfully installed!";
+        else
+        	echo "################################################################" 
+            echo "Something went wrong while trying to install the font.";
+        fi
+    else
+    	echo "################################################################" 	
+        echo "Skipping the installation of the font.";
+        echo "Please note that this conky configuration will not work";
+        echo "correctly without the font.";
+    fi
+
+fi
+
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
+FONT="KnifeFightBallet-Regular"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -197,12 +280,9 @@ fi
 
 
 
-
 ##################################################################################################################
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
-
-
 
 
 
@@ -266,13 +346,119 @@ case $DISTRO in
 		  	sudo apt-get install conky-all
 
 		  else
-		  	echo "Conky was installed. Proceeding..."
+		  	echo "conky was installed. Proceeding..."
+		fi
+
+	# vnstat
+
+		# The conky depends on vnstat to know your traffic use.
+		# check if vnstat is installed
+
+		if ! location="$(type -p "vnstat")" || [ -z "vnstat" ]; then
+
+			echo "################################################################"
+			echo "installing vnstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install vnstat
+
+		  else
+
+		  	echo "vnstat was installed. Proceeding..."
+
+		fi
+
+	# transmission-cli
+
+
+		# The conky depends on transmission-cli to know your traffic use.
+		# check if transmission-cli is installed
+
+		if ! location="$(type -p "transmission-cli")" || [ -z "transmission-cli" ]; then
+
+			echo "################################################################"
+			echo "installing transmission-cli for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install transmission-cli
+
+		  else
+
+		  	echo "transmission-cli was installed. Proceeding..."
+
+		fi
+
+
+	# curl
+
+
+		# The conky depends on curl to get info from the net.
+		# check if curl is installed
+
+		if ! location="$(type -p "curl")" || [ -z "curl" ]; then
+
+			echo "################################################################"
+			echo "installing curl for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install curl
+
+		  else
+
+		  	echo "curl was installed. Proceeding..."
+
+		fi
+
+	# wget  
+
+
+		# The conky depends on wget to get info from the net. 
+		# check if wget is installed
+
+		if ! location="$(type -p "wget")" || [ -z "wget" ]; then
+
+			echo "################################################################"
+			echo "installing wget for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install wget
+
+		  else
+
+		  	echo "wget was installed. Proceeding..."
+
+		fi
+
+
+	# netstat   
+
+
+		# The conky depends on netstat to know your traffic use. 
+		# check if netstat is installed
+
+		if ! location="$(type -p "netstat")" || [ -z "netstat" ]; then
+
+			echo "################################################################"
+			echo "installing netstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install netstat
+
+		  else
+
+		  	echo "netstat was installed. Proceeding..."
+
 		fi
 		;;
 
+	
+
+
 	Arch)
 
-	# C O N K Y
+	
+
+	# conky
 
 		# check if conky is installed
 		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
@@ -285,9 +471,114 @@ case $DISTRO in
 
 		  else
 		  	echo "Conky was installed. Proceeding..."
-		  	echo "Make sure you have the LUA version installed to see"
-		  	echo "graphical conky's."
 		fi
+
+    # transmission-cli
+
+    
+		# The conky depends on transmission-cli to get info from the net. 
+		# check if transmission-cli is installed
+
+		if ! location="$(type -p "transmission-cli")" || [ -z "transmission-cli" ]; then
+
+			echo "################################################################"
+			echo "installing transmission-cli for this script to work"
+			echo "#################################################################"
+
+		  	sudo packer -S transmission-cli
+
+		  else
+
+		  	echo "transmission-cli was installed. Proceeding..."
+
+		fi
+
+
+
+
+    # curl  
+
+
+		# The conky depends on curl to get info from the net. 
+		# check if curl is installed
+
+		if ! location="$(type -p "curl")" || [ -z "curl" ]; then
+
+			echo "################################################################"
+			echo "installing curl for this script to work"
+			echo "#################################################################"
+
+		  	sudo packer -S curl
+
+		  else
+
+		  	echo "curl was installed. Proceeding..."
+
+		fi
+
+
+	# vnstat
+
+
+		# The conky depends on vnstat to know the motherboard and manufacturer
+		# check if vnstat is installed
+
+		if ! location="$(type -p "vnstat")" || [ -z "vnstat" ]; then
+
+			echo "################################################################"
+			echo "installing vnstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S vnstat --noedit
+
+
+
+		  else
+		  	echo "vnstat was installed. Proceeding..."
+
+		fi
+
+    # wget  
+
+
+		# The conky depends on wget to get info from the net. 
+		# check if wget is installed
+
+		if ! location="$(type -p "wget")" || [ -z "wget" ]; then
+
+			echo "################################################################"
+			echo "installing wget for this script to work"
+			echo "#################################################################"
+
+		  	sudo packer -S wget
+
+		  else
+
+		  	echo "wget was installed. Proceeding..."
+
+		fi
+
+	# netstat
+
+
+		# The conky depends on netstat to know the motherboard and manufacturer
+		# check if netstat is installed
+
+		if ! location="$(type -p "netstat")" || [ -z "netstat" ]; then
+
+			echo "################################################################"
+			echo "installing netstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S netstat --noedit
+
+
+
+		  else
+		  	echo "netstat was installed. Proceeding..."
+
+		fi
+
 		;;
 
 

@@ -154,11 +154,10 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ##################################################################################################################
 
 
-
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="Decker"
+FONT="Inconsolata"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -195,6 +194,87 @@ else
 
 fi
 
+
+
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
+FONT="Feenacasual"
+
+
+if fc-list | grep -i $FONT >/dev/null ; then
+
+	echo "################################################################" 
+    echo "The font is already available. Proceeding ...";
+
+else
+	echo "################################################################" 
+    echo "The font is not currently installed, would you like to install it now? (y/n)";
+    read response
+    if [[ "$response" == [yY] ]]; then
+        echo "Installing the font to the ~/.fonts directory.";
+        cp ~/.config/conky/fonts/* ~/.fonts
+        echo "################################################################" 
+        echo "Building new fonts into the cache files";
+        echo "Depending on the number of fonts, this may take a while..." 
+        fc-cache -fv ~/.fonts
+		echo "################################################################" 
+		echo "Check if the cache build was successful?";    
+        if fc-list | grep -i $FONT >/dev/null; then
+            echo "################################################################" 
+            echo "The font was sucessfully installed!";
+        else
+        	echo "################################################################" 
+            echo "Something went wrong while trying to install the font.";
+        fi
+    else
+    	echo "################################################################" 	
+        echo "Skipping the installation of the font.";
+        echo "Please note that this conky configuration will not work";
+        echo "correctly without the font.";
+    fi
+
+fi
+
+echo "################################################################" 
+echo "Installing the fonts if you do not have it yet - with choice"
+
+FONT="KnifeFightBallet-Regular"
+
+
+if fc-list | grep -i $FONT >/dev/null ; then
+
+	echo "################################################################" 
+    echo "The font is already available. Proceeding ...";
+
+else
+	echo "################################################################" 
+    echo "The font is not currently installed, would you like to install it now? (y/n)";
+    read response
+    if [[ "$response" == [yY] ]]; then
+        echo "Installing the font to the ~/.fonts directory.";
+        cp ~/.config/conky/fonts/* ~/.fonts
+        echo "################################################################" 
+        echo "Building new fonts into the cache files";
+        echo "Depending on the number of fonts, this may take a while..." 
+        fc-cache -fv ~/.fonts
+		echo "################################################################" 
+		echo "Check if the cache build was successful?";    
+        if fc-list | grep -i $FONT >/dev/null; then
+            echo "################################################################" 
+            echo "The font was sucessfully installed!";
+        else
+        	echo "################################################################" 
+            echo "Something went wrong while trying to install the font.";
+        fi
+    else
+    	echo "################################################################" 	
+        echo "Skipping the installation of the font.";
+        echo "Please note that this conky configuration will not work";
+        echo "correctly without the font.";
+    fi
+
+fi
 
 
 
@@ -268,11 +348,88 @@ case $DISTRO in
 		  else
 		  	echo "Conky was installed. Proceeding..."
 		fi
+
+	# D M I D E C O D E
+
+
+		# The conky depends on dmidecode to know the motherboard and manufacturer
+		# check if dmidecode is installed
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install dmidecode
+
+		  	#without this line dmidecode will not work - it needs sudo
+
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+
+		  	echo "################################################################"
+		  	echo "Dmidecode was installed. Proceeding..."
+			echo "################################################################"
+			echo "Setting the user rights for dmidecode to be able to use it in conky"
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		fi
+
+
+	# L M S E N S O R S
+
+
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install lm-sensors
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceeding..."
+
+		fi
+
+
+	# vnstat
+
+
+        # The conky depends on vnstat to know the motherboard and manufacturer
+        # check if vnstat is installed
+
+        if ! location="$(type -p "vnstat")" || [ -z "vnstat" ]; then
+
+            echo "################################################################"
+            echo "installing vnstat for this script to work"
+            echo "#################################################################"
+
+            sudo apt-get install vnstat
+
+
+
+          else
+            echo "vnstat was installed. Proceeding..."
+
+        fi
 		;;
+
+	
+
 
 	Arch)
 
-	# C O N K Y
+	
+
+	# conky
 
 		# check if conky is installed
 		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
@@ -285,9 +442,79 @@ case $DISTRO in
 
 		  else
 		  	echo "Conky was installed. Proceeding..."
-		  	echo "Make sure you have the LUA version installed to see"
-		  	echo "graphical conky's."
 		fi
+
+	# dmidecode
+
+
+		# The conky depends on dmidecode to know the motherboard and manufacturer
+		# check if dmidecode is installed
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S dmidecode
+
+		  	#without this line dmidecode will not work - it needs sudo
+
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+
+		  	echo "################################################################"
+		  	echo "Dmidecode was installed. Proceeding..."
+			echo "################################################################"
+			echo "Setting the user rights for dmidecode to be able to use it in conky"
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		fi
+
+
+	# lmsensors
+
+
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S lm_sensors --noedit
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceeding..."
+
+		fi
+
+
+	# vnstat
+
+
+		# The conky depends on vnstat to know the motherboard and manufacturer
+		# check if vnstat is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing vnstat for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S vnstat --noedit
+
+
+
+		  else
+		  	echo "vnstat was installed. Proceeding..."
+
+		fi	
 		;;
 
 

@@ -203,8 +203,40 @@ fi
 
 
 
+
 echo "################################################################"
 echo "Checking dependancies"
+echo "################################################################"
+echo "If lsb_release is not present, it will be installed" 
+echo "to check what os you have"
+
+	# lsb_release
+
+		# check if lsb_release is installed on Linux Deb
+		if ! location="$(type -p "lsb_release")" || [ -z "lsb_release" ]; then
+
+			echo "################################################################"
+			echo "installing lsb-release for this script to work"
+			echo "################################################################"
+
+		  	sudo apt-get install lsb-release -y
+
+		  else
+		  	echo "lsb-release was installed. Proceeding..."
+		fi
+
+		# check if lsb_release is installed on ARCH
+		if ! location="$(type -p "lsb_release")" || [ -z "lsb_release" ]; then
+
+			echo "################################################################"
+			echo "installing lsb-release for this script to work"
+			echo "################################################################"
+
+		  	sudo pacman -S lsb-release
+
+		  else
+		  	echo "lsb-release was installed. Proceeding..."
+		fi
 
 DISTRO=$(lsb_release -si)
 

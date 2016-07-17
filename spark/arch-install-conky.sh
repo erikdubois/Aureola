@@ -154,11 +154,10 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 ##################################################################################################################
 
 
-
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="Decker"
+FONT="Purisa"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -197,11 +196,9 @@ fi
 
 
 
-
 ##################################################################################################################
 ########################                    D E P E N D A N C I E S                     ##########################
 ##################################################################################################################
-
 
 
 
@@ -268,11 +265,66 @@ case $DISTRO in
 		  else
 		  	echo "Conky was installed. Proceeding..."
 		fi
+
+	# D M I D E C O D E
+
+
+		# The conky depends on dmidecode to know the motherboard and manufacturer
+		# check if dmidecode is installed
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install dmidecode
+
+		  	#without this line dmidecode will not work - it needs sudo
+
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+
+		  	echo "################################################################"
+		  	echo "Dmidecode was installed. Proceeding..."
+			echo "################################################################"
+			echo "Setting the user rights for dmidecode to be able to use it in conky"
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		fi
+
+
+	# L M S E N S O R S
+
+
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo apt-get install lm-sensors
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceeding..."
+
+		fi
 		;;
+
+	
+
 
 	Arch)
 
-	# C O N K Y
+	
+
+	# conky
 
 		# check if conky is installed
 		if ! location="$(type -p "conky")" || [ -z "conky" ]; then
@@ -285,9 +337,61 @@ case $DISTRO in
 
 		  else
 		  	echo "Conky was installed. Proceeding..."
-		  	echo "Make sure you have the LUA version installed to see"
-		  	echo "graphical conky's."
 		fi
+
+
+	# dmidecode
+
+
+		# The conky depends on dmidecode to know the motherboard and manufacturer
+		# check if dmidecode is installed
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S dmidecode
+
+		  	#without this line dmidecode will not work - it needs sudo
+
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		  else
+
+		  	echo "################################################################"
+		  	echo "Dmidecode was installed. Proceeding..."
+			echo "################################################################"
+			echo "Setting the user rights for dmidecode to be able to use it in conky"
+		  	sudo chmod u+s /usr/sbin/dmidecode
+
+		fi
+
+
+	# lmsensors
+
+
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S lm_sensors --noedit
+
+
+
+		  else
+		  	echo "lm-sensors was installed. Proceeding..."
+
+		fi
+
+	
+
 		;;
 
 
