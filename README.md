@@ -114,7 +114,7 @@ You can use other integers 1,2,3. 3 was the solution for me.
 
 The most recent conky comes first.
 
-# Aureolo - Gambodekdue
+# Aureola - Gambodekdue
 
 This conky is based on the Gambodekuno. I deleted the date and time from Gambodekmono. We have it usually somewhere in our panel and changed some items around in order to have dropbox and its text when it syncs.
 
@@ -298,6 +298,12 @@ A conky first seen from the hand of Jesse Avalos and changed to my needs and wis
 
 
 ![Screenshots](http://i.imgur.com/LEq7GwJ.png)
+
+
+
+Icons from Sardi on Sourceforge - wallpaper provided by variety
+
+![Screenshots](http://i.imgur.com/3l0tG2d.jpg)
 
 
 # Aureola - Acros
