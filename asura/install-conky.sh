@@ -99,7 +99,7 @@ sleep 1
 [ -d $HOME"/.config/conky" ] || mkdir -p $HOME"/.config/conky"
 
 # if there is no hidden folder fonts then make one
-[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts
+[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 
 
 
