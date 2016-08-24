@@ -1,8 +1,8 @@
 # Aureola
 
-Version : v1.3.2
+Version : v1.3.3
 
-Date : 18/08/2016
+Date : 24/08/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -113,6 +113,15 @@ You can use other integers 1,2,3. 3 was the solution for me.
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky comes first.
+
+
+# Aureola - Poku
+
+This conky is based on Unix-on from Etles_Team.
+Changed it around a bit to suit my needs.
+
+![Screenshots](http://i.imgur.com/75ZPMkz.jpg)
+
 
 # Aureola - Gambodekdue
 
