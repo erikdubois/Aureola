@@ -106,7 +106,9 @@ use the following code in your config file
 
 	xinerama_head = 3,  						-- for dual screen
 
-You can use other integers 1,2,3. 3 was the solution for me.
+You can use other integers 1,2,3. 
+
+3 was the solution for me.
 
 
 
