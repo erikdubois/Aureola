@@ -1,8 +1,8 @@
 # Aureola
 
-Version : v1.3.3
+Version : v1.3.4
 
-Date : 24/08/2016
+Date : 27/08/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -337,6 +337,9 @@ In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via
 ![Screenshots](http://i.imgur.com/1R0CzAQ.jpg)
 
 
+
+
+
 # Aureola - Salis
 
 Working with a lua ring script. The explanation of Alva about eth0, eth1 etc applies here too. Check your system and change the lua.
@@ -344,17 +347,18 @@ Working with a lua ring script. The explanation of Alva about eth0, eth1 etc app
 ![Screenshots](http://i.imgur.com/VPBJ6uV.png)
 
 
+
+
+
 # Aureola - Lazuli
 
 After the creation of a new icon set i.e Sardi Mono Grey I adapted the colors to go with the icon design.
 Sardi icons to be found at https://sourceforge.net/projects/sardi
 
-
-![Screenshots](http://i.imgur.com/o2Dp2bH.png)
-
+Omitted the lines to know the temperature in Antwerp. Service has been discontinued. It is allways these kind of services that fail us over time. May I suggest weather applets that are present in many distro's.
 
 
-![Screenshots](http://i.imgur.com/2JLL5kl.png)
+![Screenshots](http://i.imgur.com/dM24TEf.png)
 
 
 
@@ -366,8 +370,6 @@ Sardi icons to be found at https://sourceforge.net/projects/sardi
 ![Screenshots](http://i.imgur.com/GU4ck3k.png)
 
 Credits Willem O
-
-
 
 
 
