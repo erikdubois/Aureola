@@ -2,7 +2,7 @@
 
 Version : v1.3.5
 
-Date : 26/09/2016
+Date : 25/09/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -115,6 +115,18 @@ You can use other integers 1,2,3.
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky comes first.
+
+# Aureola Lazuli Polo
+
+I made a new arc theme based colouring named Arc-Polo at github of 
+
+https://github.com/erikdubois/arc-theme-colora
+
+I wanted a conky to be the cherry on the cake. New theme, new kernel and new conky.
+
+
+![Screenshots](http://i.imgur.com/eOQ1cFC.jpg)
+
 
 
 # Aureola - Poku
