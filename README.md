@@ -11,7 +11,7 @@ These conky's configuration files follow the **LUA** syntax as mentioned on the 
 Conky's will be first tested and made on Linux Mint Cinnamon and then tested on other Os's.
 
 
-# Installation of conky aureola
+# Installation of conky collection aureola
 
 To get all these conky's to your computer you can either download the zip and uncompress it or use a terminal and type
 
