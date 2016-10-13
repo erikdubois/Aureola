@@ -339,13 +339,6 @@ In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via
 ![Screenshots](http://i.imgur.com/pyZEPdf.png)
 
 
-![Screenshots](http://i.imgur.com/y92Jrp4.png)
-
-
-![Screenshots](http://i.imgur.com/1R0CzAQ.jpg)
-
-
-
 
 
 # Aureola - Salis
