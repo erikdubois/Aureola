@@ -86,7 +86,9 @@ This script will provide the following elements :
 
 # Switching the conky
 
-Every conky has an individual installation script. That means you will only install software that you need for the conky.
+Every conky has an **individual installation script**. That means you will only install software that you need for the conky.
+
+			./install-conky.sh
 
 The script asks you  if it is ok to delete everything inside folder ~/.config/conky.
 
