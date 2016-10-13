@@ -64,7 +64,7 @@ Anything with the name **conky.conf** will be started if in the conky's home fol
 
 Now you have a hidden folder on your computer with all the conky's of aureola.
 
-Navigate to ~/.aureola
+**Navigate to ~/.aureola**
 
 and choose a directory of a conky you like. There are images available.
 
