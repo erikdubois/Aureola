@@ -154,7 +154,7 @@ Specifications are the same as Gambodekuno  +  Dropbox.
 
 WHITE version via settings file
 
-![Screenshots](http://i.imgur.com/KCwGiNL.png)
+![Screenshots](http://i.imgur.com/uIwlajW.jpg)
 
 DARK version via settings file
 
