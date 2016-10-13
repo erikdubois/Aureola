@@ -336,7 +336,7 @@ In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via
 	sudo apt-get install aptitude
 
 
-![Screenshots](http://i.imgur.com/pyZEPdf.png)
+![Screenshots](http://i.imgur.com/tCxdkQJ.jpg)
 
 
 
