@@ -359,7 +359,7 @@ Sardi icons to be found at https://sourceforge.net/projects/sardi
 Omitted the lines to know the temperature in Antwerp. Service has been discontinued. It is allways these kind of services that fail us over time. May I suggest weather applets that are present in many distro's.
 
 
-![Screenshots](http://i.imgur.com/dM24TEf.png)
+![Screenshots](http://i.imgur.com/sIty6BD.jpg)
 
 
 
