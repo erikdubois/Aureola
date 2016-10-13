@@ -366,9 +366,9 @@ Omitted the lines to know the temperature in Antwerp. Service has been discontin
 
 
 
-# Aureola - Sparki
+# Aureola - Spark
 
-![Screenshots](http://i.imgur.com/GU4ck3k.png)
+![Screenshots](http://i.imgur.com/p8ymtQW.jpg)
 
 Credits Willem O
 
