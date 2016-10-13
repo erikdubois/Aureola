@@ -30,7 +30,7 @@ From this folder .aureola you can rerun at any time the script
 
 		./get-aureola-from-github-to-local-drive.sh
 
-and your conky's will be updated to the latest version automatically.
+and your conky's will be **updated to the latest version automatically**.
 
 This script will take care of :
 
