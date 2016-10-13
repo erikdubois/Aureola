@@ -336,7 +336,13 @@ In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via
 	sudo apt-get install aptitude
 
 
-![Screenshots](http://i.imgur.com/tCxdkQJ.jpg)
+![Screenshots](http://i.imgur.com/pyZEPdf.png)
+
+
+![Screenshots](http://i.imgur.com/y92Jrp4.png)
+
+
+![Screenshots](http://i.imgur.com/1R0CzAQ.jpg)
 
 
 
@@ -392,7 +398,7 @@ This is the original conky from EtlesTeam still available in the folder lua.
 
 This is the changed version that will activated standard for ethernet connection.
 
-![Screenshots](http://i.imgur.com/5y6HZiu.jpg)
+![Screenshots](http://i.imgur.com/77wMpId.png)
 
 
 The original conky had wireless link quality and downspeed as bottom gauge.
