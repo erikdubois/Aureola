@@ -90,7 +90,7 @@ Every conky has an **individual installation script**. That means you will only 
 
 			./install-conky.sh
 
-The script asks you  if it is ok to delete everything inside folder ~/.config/conky.
+The script asks you  if it is ok to delete everything inside folder **~/.config/conky**.
 
 The reason I have done this is because you sometimes change the code on the live conky in ~/.config/conky but if you change the conky via this script the files will be overwritten. Then all your work is gone.
 
