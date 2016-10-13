@@ -2,24 +2,35 @@
 
 Version : v1.3.6
 
-Date : 25/09/2016
+Date : 10/10/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
-These conky's configuration files follow the LUA syntax as mentioned on the conky website for version 1.10 and later versions.
+These conky's configuration files follow the **lUA** syntax as mentioned on the conky website for **version 1.10** and later versions.
 
-Conky's will be first tested and made on Linux Mint and then tested on other Os's.
+Conky's will be first tested and made on Linux Mint Cinnamon and then tested on other Os's.
 
 
 # Installation of conky aureola
 
-To get al these conky's to your computer, run the script
+To get all these conky's to your computer you can either download the zip and uncompress it or use a terminal and type
 
-	- get-aureola-from-github-to-local-drive.sh
+		git clone https://github.com/erikdubois/Aureola
 
-<b>YOU HAVE TO DO THIS ! </b>
+Open the folder and run the script
 
-The scripts will copy the code from ~/.aurela folder to ~/.config/conky folder
+		./get-aureola-from-github-to-local-drive.sh
+
+This script will again download the latest code from github but it will also move all the conky's
+in a hidden folder in your home directory. All the conky's will be placed in
+
+		~/.aureola
+
+From this folder .aureola you can rerun at any time the script
+
+		./get-aureola-from-github-to-local-drive.sh
+
+and your conky's will be updated to the latest version automatically.
 
 This script will take care of :
 
@@ -29,50 +40,48 @@ This script will take care of :
 
 	- making sure there is a ~/.config/conky folder present
 
-	- making a hidden folder ~/.aureola where all the github files will reside
+	- making a hidden folder ~/.aureola where all the conky's will reside
 
 	- copy/pasting the github files in the hidden folder ~/.aureola
 
 
-Aureola's home folder is a hidden one. 
 
-	
+# Remember
+
+Aureola's home folder is a hidden one.
+
 	~/.aureola
-
 
 Conky's home folder is also a hidden one.
 
 	~/.config/conky.
 
-
-Anything with the name <b>conky.conf</b> will be started if in the conky's home folder.
-
+Anything with the name **conky.conf** will be started if in the conky's home folder.
 
 
-# Running a conky
 
+# Choose and run a conky
 
 Now you have a hidden folder on your computer with all the conky's of aureola.
 
-Navigate to ~/.aureola  (or stay in your download folder)
+Navigate to ~/.aureola
 
-and choose a directory of a conky you like.
+and choose a directory of a conky you like. There are images available.
 
 Run the installation script provided :
 
+	./install-conky.sh
 
-	install-conky.sh
-
-
-This script will provide the following steps :
+This script will provide the following elements :
 
 	- making sure all folders are available
 	- alerting if you want to overwrite the ~/.config/conky files
 	- copy all files of that particular conky to ~/.config/conky
 	- making sure you autostart conky next boot
 	- install the fonts if they are missing - missing fonts just break the conky
-	- checking dependancies and installing the extra software needed for this conky
+	- checking dependencies and installing the extra software needed for this conky
 	- and last but not least - run the conky
+
 
 
 # Switching the conky
@@ -85,11 +94,9 @@ The reason I have done this is because you sometimes change the code on the live
 
 Respond with yes if you did not change anything.
 
+>Exactly the same steps will be taken as above mentioned.
 
-	Exactly the same steps will be taken as above mentioned.
-
-
-If there are dependancies (read software) that is required for the conky to function fully,
+If there are dependencies (read software) that is required for the conky to function fully,
 it will be installed.
 
 
@@ -106,7 +113,7 @@ use the following code in your config file
 
 	xinerama_head = 3,  						-- for dual screen
 
-You can use other integers 1,2,3. 
+You can use other integers 1,2,3.
 
 3 was the solution for me.
 
@@ -115,19 +122,6 @@ You can use other integers 1,2,3.
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky comes first.
-
-# Aureola Lazuli Polo
-
-I made a new arc theme based colouring named Arc-Polo at github of 
-
-https://github.com/erikdubois/arc-theme-colora
-
-I wanted a conky to be the cherry on the cake. New theme, new kernel and new conky.
-
-
-![Screenshots](http://i.imgur.com/eOQ1cFC.jpg)
-
-
 
 # Aureola - Poku
 
@@ -144,7 +138,7 @@ This conky is based on the Gambodekuno. I deleted the date and time from Gambode
 
 <b>Naming</b>
 
-Naming is similar as gambodekuno. 
+Naming is similar as gambodekuno.
 
 Gambo is leg. Dek is ten and due is two. So 12 legs.
 
@@ -196,7 +190,7 @@ Gambodekuno stands for something.
 
 Gambo stands for legs.
 
-Dek is ten and uno is one. 
+Dek is ten and uno is one.
 
 So 11 legs.
 
@@ -260,7 +254,7 @@ This conky came from the need to know my network information and current downloa
 
 ![Screenshots](http://i.imgur.com/LH6oerv.jpg)
 
-The conky works with the program transmission-cli (command line interface). It will be installed during the installation script. 
+The conky works with the program transmission-cli (command line interface). It will be installed during the installation script.
 
 After changing the settings in Edit, Preferences, Remote and allowing remote access only to your personal pc aka 127.0.0.1, you can see the current status of your torrent downloads in the conky.
 
@@ -335,7 +329,7 @@ Included a script to get the latest image for spotify and a logo for the distro.
 
 Not all distro's have the command aptitude. Delete the line if you do not have this.
 
-In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via 
+In Ubuntu Mate 16.04 or Ubuntu 16.04 you can install aptitude via
 
 	sudo apt-get install aptitude
 
@@ -411,7 +405,7 @@ Since I am working on a pc, I wanted my ethernet connection to show up.
 
 If you want the original laptop conky back with wireless information then rename the rings_text-bg.lua to rings_text-bg-ethernet.lua. And change rings_text-bg-for-wireless.lua to rings_text-bg.lua. Check the name in the lua file for the name of your wireless card. Now it is named <b>wlx0015af414869</b>.
 
-The ethernet conky (the one standard activated) uses <b>enp2s0</b> as ethernet name. It can me also eth0 or eth1 or something else. 
+The ethernet conky (the one standard activated) uses <b>enp2s0</b> as ethernet name. It can me also eth0 or eth1 or something else.
 
 Find out with following command in a terminal
 

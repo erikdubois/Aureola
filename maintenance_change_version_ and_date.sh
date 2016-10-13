@@ -72,5 +72,5 @@
 
 find .  -name "conky.conf" -type f -exec sed -i  's/v1.3.5/v1.3.6/g' {} \;
 find .  -name "README.md" -type f -exec sed -i   's/v1.3.5/v1.3.6/g' {} \;
-find .  -name "conky.conf" -type f -exec sed -i  's/26\/09\/2016/11\/10\/2016/g' {} \;
-find .  -name "README.md" -type f -exec sed -i   's/26\/09\/2016/11\/10\/2016/g' {} \;
+find .  -name "conky.conf" -type f -exec sed -i  's/26\/09\/2016/10\/10\/2016/g' {} \;
+find .  -name "README.md" -type f -exec sed -i   's/26\/09\/2016/10\/10\/2016/g' {} \;
