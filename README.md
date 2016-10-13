@@ -392,7 +392,7 @@ This is the original conky from EtlesTeam still available in the folder lua.
 
 This is the changed version that will activated standard for ethernet connection.
 
-![Screenshots](http://i.imgur.com/77wMpId.png)
+![Screenshots](http://i.imgur.com/5y6HZiu.jpg)
 
 
 The original conky had wireless link quality and downspeed as bottom gauge.
