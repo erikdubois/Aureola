@@ -26,5 +26,5 @@
 		echo $old_cover > ~/.config/conky/cover.txt
 		#echo $old_cover
 	fi
-kill
+
 
