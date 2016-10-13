@@ -96,7 +96,7 @@ The reason I have done this is because you sometimes change the code on the **li
 
 Respond with *yes* if you did not change anything.
 
->Exactly the same steps will be taken as above mentioned.
+>The script will follow exactly the same steps as above mentioned.
 
 If there are dependencies (read software) that is required for the conky to function fully,
 it will be installed.
@@ -106,7 +106,7 @@ it will be installed.
 
 Whether you install spotify or not is left up to the user. Follow this link and follow the steps
 
-	https://www.spotify.com/nl/download/linux/
+https://www.spotify.com/nl/download/linux/
 
 
 # Dual-screen users
