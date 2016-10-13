@@ -6,7 +6,7 @@ Date : 10/10/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
-These conky's configuration files follow the **lUA** syntax as mentioned on the conky website for **version 1.10** and later versions.
+These conky's configuration files follow the **LUA** syntax as mentioned on the conky website for **version 1.10** and later versions.
 
 Conky's will be first tested and made on Linux Mint Cinnamon and then tested on other Os's.
 
