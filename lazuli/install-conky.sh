@@ -304,12 +304,13 @@ case $DISTRO in
 		;;
 
 	Arch)
-
+		# if you installed lsb-release this script will know it is on arch
 		echo "You are using an arch machine"
 		echo "For this conky to work fully"
 		echo "you need to install the following packages"
 		echo "- conky-lua"
 		echo "- lm-sensors"
+		echo "- vnstat"
 		;;
 
 	*)
