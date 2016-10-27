@@ -167,6 +167,7 @@ fi
 
 # copy all config files to this hidden folder
 cp -r /tmp/aureola/* ~/.aureola
+rm -rf /tmp/aureola
 
 echo "################################################################"
 echo "In this hidden folder ~/.aureola you will find your download."
