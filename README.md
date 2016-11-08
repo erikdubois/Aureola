@@ -134,6 +134,11 @@ The most recent conky comes first.
 # Aureola - Skeleton
 
 
+Youtube tutorial with Aureola Skeleton as example 
+
+https://www.youtube.com/watch?v=7M_nkznxopQ
+
+
 ![Screenshots](http://i.imgur.com/uhJxSD7.jpg)
 
 
