@@ -125,6 +125,13 @@ You can use other integers 1,2,3.
 
 The most recent conky comes first.
 
+
+# Aureola - Skeleton
+
+![Screenshots](http://i.imgur.com/uhJxSD7.jpg)
+
+
+
 # Aureola - Sabre
 
 This conky is based on the conky of [EtlesTeam](http://etlesteam.deviantart.com/art/Conky-Et-Bars-614454433).
