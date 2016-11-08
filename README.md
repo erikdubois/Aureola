@@ -13,6 +13,11 @@ Conky's will be first tested and made on Linux Mint Cinnamon and then tested on 
 
 # Installation of conky collection aureola
 
+Youtube tutorial with Aureola Skeleton as example 
+
+https://www.youtube.com/watch?v=7M_nkznxopQ
+
+
 To get all these conky's to your computer you can either download the zip and uncompress it or use a terminal and type
 
 		git clone https://github.com/erikdubois/Aureola
@@ -127,6 +132,7 @@ The most recent conky comes first.
 
 
 # Aureola - Skeleton
+
 
 ![Screenshots](http://i.imgur.com/uhJxSD7.jpg)
 
