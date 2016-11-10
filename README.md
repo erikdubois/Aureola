@@ -1,8 +1,8 @@
 # Aureola
 
-Version : v1.5.1
+Version : v1.5.2
 
-Date : 08/11/2016
+Date : 10/11/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -129,6 +129,12 @@ You can use other integers 1,2,3.
 # OVERVIEW OF THE CURRENT COLLECTION
 
 The most recent conky comes first.
+
+
+# Aurora -Cherry
+
+
+![Screenshots](http://i.imgur.com/8GoU1mm.jpg)
 
 
 # Aureola - Skeleton
