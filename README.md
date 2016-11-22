@@ -131,7 +131,13 @@ You can use other integers 1,2,3.
 The most recent conky comes first.
 
 
-# Aurora -Cherry
+# Aurora - Shailen
+
+
+![Screenshots](http://i.imgur.com/mHqVHAY.png)
+
+
+# Aurora - Cherry
 
 
 ![Screenshots](http://i.imgur.com/8GoU1mm.jpg)
