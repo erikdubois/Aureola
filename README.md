@@ -139,6 +139,7 @@ The most recent conky comes first.
 # Aureola - Shailen MC
 
 MC = Media Center
+
 Use of bigger fonts to be viewed on hd tv
 
 ![Screenshots](http://i.imgur.com/nOEsL6A.jpg)
