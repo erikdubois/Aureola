@@ -1,8 +1,8 @@
 # Aureola
 
-Version : v1.6.3
+Version : v1.6.4
 
-Date : 22/11/2016
+Date : 27/11/2016
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
@@ -131,13 +131,18 @@ You can use other integers 1,2,3.
 The most recent conky comes first.
 
 
-# Aurora - Shailen
+# Aureola - Spotter
+
+![Screenshots](http://i.imgur.com/C5AnUaC.jpg)
+
+
+# Aureola - Shailen
 
 
 ![Screenshots](http://i.imgur.com/mHqVHAY.png)
 
 
-# Aurora - Cherry
+# Aureola - Cherry
 
 
 ![Screenshots](http://i.imgur.com/8GoU1mm.jpg)
