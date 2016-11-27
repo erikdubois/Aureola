@@ -34,10 +34,6 @@
 # 
 # More from Erik Dubois
 #
-# Aurora Conky
-# at http://sourceforge.net/projects/auroraconkytheme/
-# Explanation on the use of this theme can be found at 
-# http://erikdubois.be/category/linux/aurora-conky/
 # 
 # Aureola Conky
 # Collections of nice conky's with lua syntax
@@ -47,9 +43,9 @@
 # Many different styles of icons from colourfull, monochrome, white, circle
 # https://sourceforge.net/projects/sardi/
 #
-# Super Ultra Flat Numix Remix
+# Surfn icons
 # Colourfull and playfull icons
-# https://github.com/erikdubois/Super-Ultra-Flat-Numix-Remix
+# https://github.com/erikdubois/surfn
 #
 # Check out the github - many more scripts for automatic installation of Linux Systems.
 #
