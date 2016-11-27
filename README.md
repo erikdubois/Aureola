@@ -13,7 +13,7 @@ Conky's will be first tested and made on Linux Mint Cinnamon and then tested on 
 
 # Installation of conky collection aureola
 
-Youtube tutorial with Aureola Skeleton as example 
+Youtube tutorial with Aureola Skeleton as example
 
 https://www.youtube.com/watch?v=7M_nkznxopQ
 
@@ -136,6 +136,14 @@ The most recent conky comes first.
 ![Screenshots](http://i.imgur.com/C5AnUaC.jpg)
 
 
+# Aureola - Shailen MC
+
+MC = Media Center
+Use of bigger fonts to be viewed on hd tv
+
+![Screenshots](http://i.imgur.com/nOEsL6A.jpg)
+
+
 # Aureola - Shailen
 
 
@@ -151,7 +159,7 @@ The most recent conky comes first.
 # Aureola - Skeleton
 
 
-Youtube tutorial with Aureola Skeleton as example 
+Youtube tutorial with Aureola Skeleton as example
 
 https://www.youtube.com/watch?v=7M_nkznxopQ
 
