@@ -159,7 +159,7 @@ cp start-conky.desktop ~/.config/autostart/start-conky.desktop
 echo "################################################################" 
 echo "Installing the fonts if you do not have it yet - with choice"
 
-FONT="Distortion Dos Digital"
+FONT="Distortion"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
