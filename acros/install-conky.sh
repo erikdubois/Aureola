@@ -1,24 +1,5 @@
 #!/bin/bash
 #
-#                                       
-# MMMMMMMMMMMMMMMMMMMMMMMMMmds+.        
-# MMm----::-://////////////oymNMd+`     
-# MMd      /++                -sNMd:    
-# MMNso/`  dMM    `.::-. .-::.` .hMN:   
-# ddddMMh  dMM   :hNMNMNhNMNMNh: `NMm   
-#     NMm  dMM  .NMN/-+MMM+-/NMN` dMM   
-#     NMm  dMM  -MMm  `MMM   dMM. dMM   
-#     NMm  dMM  -MMm  `MMM   dMM. dMM   
-#     NMm  dMM  .mmd  `mmm   yMM. dMM   
-#     NMm  dMM`  ..`   ...   ydm. dMM   
-#     hMM- +MMd/-------...-:sdds  dMM   
-#     -NMm- :hNMNNNmdddddddddy/`  dMM   
-#      -dMNs-``-::::-------.``    dMM   
-#       `/dMNmy+/:-------------:/yMMM  
-#          ./ydNMMMMMMMMMMMMMMMMMMMMM  
-#             \.MMMMMMMMMMMMMMMMMMM    
-#                                      
-#
 #
 ##################################################################################################################
 #
@@ -31,40 +12,6 @@
 # Author 	: 	Erik Dubois
 # Website 	: 	http://www.erikdubois.be
 ##################################################################################################################
-# 
-# More from Erik Dubois
-#
-# Aurora Conky
-# at http://sourceforge.net/projects/auroraconkytheme/
-# Explanation on the use of this theme can be found at 
-# http://erikdubois.be/category/linux/aurora-conky/
-# 
-# Aureola Conky
-# Collections of nice conky's with lua syntax
-# https://github.com/erikdubois/Aureola
-#
-# Sardi icons
-# Many different styles of icons from colourfull, monochrome, white, circle
-# https://sourceforge.net/projects/sardi/
-#
-# Super Ultra Flat Numix Remix
-# Colourfull and playfull icons
-# https://github.com/erikdubois/Super-Ultra-Flat-Numix-Remix
-#
-# Check out the github - many more scripts for automatic installation of Linux Systems.
-#
-#
-#
-#
-#
-##################################################################################################################
-# If the option -y has been added. It will autoinstall all. Omit if you do not want that.
-##################################################################################################################
-#
-#
-#
-#
-##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. AT YOUR OWN RISK.
 #
@@ -75,6 +22,7 @@
 # and copy the configuration file to the standard place
 # where conky looks for a configuration file
 # Lua syntax!!
+
 
 # killing whatever conkies are still working
 echo "################################################################"
@@ -197,22 +145,44 @@ fi
 
 
 
-
 ##################################################################################################################
-########################                    D E P E N D A N C I E S                     ##########################
+########################                        D I S T R O                             ##########################
 ##################################################################################################################
-
-
 
 
 echo "################################################################"
-echo "Checking dependancies"
+echo "Checking presence of lsb-release and install it when missing"
+
+	if ! location="$(type -p "lsb_release")" || [ -z "lsb_release" ]; then
+
+		# check if apt-git is installed
+		if which apt-get > /dev/null; then
+
+			sudo apt-get install -y lsb-release
+
+		fi
+
+		# check if pacman is installed
+		if which pacman > /dev/null; then
+
+			sudo pacman -S --noconfirm lsb-release
+
+		fi
+
+	fi
+
 
 DISTRO=$(lsb_release -si)
 
 echo "################################################################"
 echo "You are working on " $DISTRO
 echo "################################################################"
+
+
+##################################################################################################################
+########################                    D E P E N D A N C I E S                     ##########################
+##################################################################################################################
+
 
 
 
@@ -230,7 +200,7 @@ case $DISTRO in
 			echo "installing conky for this script to work"
 			echo "################################################################"
 
-		  	sudo apt-get install conky-all
+		  	sudo apt-get install -y conky-all
 
 		  else
 		  	echo "Conky was installed. Proceeding..."
@@ -248,7 +218,7 @@ case $DISTRO in
 			echo "installing dmidecode for this script to work"
 			echo "#################################################################"
 
-		  	sudo apt-get install dmidecode
+		  	sudo apt-get install -y dmidecode
 
 		  	#without this line dmidecode will not work - it needs sudo
 
@@ -277,7 +247,7 @@ case $DISTRO in
 			echo "installing lm-sensors for this script to work"
 			echo "#################################################################"
 
-		  	sudo apt-get install lm-sensors
+		  	sudo apt-get install -y lm-sensors
 
 
 
@@ -289,12 +259,95 @@ case $DISTRO in
 
 	Arch)
 
-		echo "You are using an arch machine"
-		echo "For this conky to work fully"
-		echo "you need to install the following packages"
-		echo "- conky-lua"
-		echo "- dmidecode"
-		echo "- lm-sensors"
+		echo "Installing software for your Arch machine"
+
+	# L M S E N S O R S
+
+
+		# The conky depends on lm-sensors to know the motherboard and manufacturer
+		# check if lm-sensors is installed
+
+		if ! location="$(type -p "sensors")" || [ -z "sensors" ]; then
+
+			echo "################################################################"
+			echo "installing lm-sensors for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S --noconfirm lm_sensors
+
+		  else
+		  	echo "################################################################"
+		  	echo "lm-sensors was installed. Proceeding..."
+
+
+		fi
+
+
+
+	# D M I D E C O D E
+
+
+		# The conky depends on dmidecode to know more info
+
+		if ! location="$(type -p "dmidecode")" || [ -z "dmidecode" ]; then
+
+			echo "################################################################"
+			echo "installing dmidecode for this script to work"
+			echo "#################################################################"
+
+		  	sudo pacman -S --noconfirm dmidecode
+
+		  else
+		  	echo "################################################################"
+		  	echo "dmidecode was installed. Proceeding..."
+
+
+		fi
+
+		echo "Setting the user rights for dmidecode to be able to use it in conky"
+		 sudo chmod u+s /usr/sbin/dmidecode
+
+	# C O N K Y
+
+		# check if conky is installed
+
+		if pacman -Q conky-lua-nv > /dev/null ; then
+
+
+			echo "################################################################"
+			echo "Conky-lua-nv is already installed. Proceeding..."
+
+
+
+		else
+
+			echo "################################################################"
+			echo "installing conky-lua-nv for this script to work"
+
+
+
+			program="conky-lua-nv"
+
+
+			if which pacaur > /dev/null; then
+
+				echo "Installing with pacaur"
+				pacaur -S --noconfirm --noedit  $program
+
+			elif which packer > /dev/null; then
+
+				echo "Installing with packer"
+				packer -S --noconfirm --noedit  $program 	
+
+			elif which yaourt > /dev/null; then
+
+				echo "Installing with yaourt"
+				yaourt -S --noconfirm --noedit  $program
+				  	
+			fi
+
+		fi
+
 		;;
 
 	*)
