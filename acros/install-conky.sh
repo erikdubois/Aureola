@@ -363,6 +363,11 @@ case $DISTRO in
 
 		  	sudo eopkg install -y conky
 
+		  	echo "At this point in time Solus has reverted back to 1.9 version"
+		  	echo "Script to get the latest version is on my github"
+		  	echo "http://github.com/erikdubois"
+		  	echo "Check that you have at least version 1.10"
+		  	conky --version
 		  else
 		  	echo "Conky was installed. Proceeding..."
 		fi
