@@ -21,7 +21,7 @@ require 'cairo'
 gauge = {
 {
     name='cpu',                    arg='cpu0',                  max_value=100,
-    x=180,                          y=610,
+    x=180,                          y=580,
     graph_radius=20,
     graph_thickness=15,
     graph_start_angle=270,
@@ -42,7 +42,7 @@ gauge = {
 },
 {
     name='cpu',                    arg='cpu1',                  max_value=100,
-    x=180,                          y=610,
+    x=180,                          y=580,
     graph_radius=40,
     graph_thickness=15,
     graph_start_angle=270,
@@ -63,7 +63,7 @@ gauge = {
 },
 {
     name='memperc',                arg='',                      max_value=100,
-    x=180,                          y=612,
+    x=180,                          y=582,
     graph_radius=20,
     graph_thickness=15,
     graph_start_angle=90,
@@ -84,7 +84,7 @@ gauge = {
 },
 {
     name='fs_used_perc',           arg='/',                     max_value=100,
-    x=180,                          y=612,
+    x=180,                          y=582,
     graph_radius=40,
     graph_thickness=15,
     graph_start_angle=90,
@@ -105,7 +105,7 @@ gauge = {
 },
 {
     name='downspeedf',           arg='enp2s0',                     max_value=100,
-    x=180,                          y=612,
+    x=180,                          y=582,
     graph_radius=60,
     graph_thickness=15,
     graph_start_angle=90,
@@ -126,7 +126,7 @@ gauge = {
 },
 {
     name='upspeedf',           arg='enp2s0',                     max_value=100,
-    x=180,                          y=610,
+    x=180,                          y=580,
     graph_radius=60,
     graph_thickness=15,
     graph_start_angle=270,
@@ -147,7 +147,7 @@ gauge = {
 },
 {
     name='downspeedf',           arg='enp2s0',                     max_value=100,
-    x=180,                          y=612,
+    x=180,                          y=582,
     graph_radius=90,
     graph_thickness=5,
     graph_start_angle=180,
@@ -168,7 +168,7 @@ gauge = {
 },
 {
     name='upspeedf',           arg='enp2s0',                     max_value=100,
-    x=180,                          y=612,
+    x=180,                          y=582,
     graph_radius=80,
     graph_thickness=5,
     graph_start_angle=180,
