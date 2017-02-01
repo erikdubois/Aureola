@@ -311,22 +311,23 @@ case $DISTRO in
 
 		# check if conky is installed
 
-		if pacman -Q conky-lua-nv > /dev/null ; then
+		if pacman -Q conky > /dev/null ; then
 
 
 			echo "################################################################"
-			echo "Conky-lua-nv is already installed. Proceeding..."
+			echo "Conky is already installed. Proceeding..."
 
 
 
 		else
 
 			echo "################################################################"
-			echo "installing conky-lua-nv for this script to work"
+			echo "installing conky for this script to work"
+			echo "you may need to install conky-lua-nv manually"
 
 
 
-			program="conky-lua-nv"
+			program="conky"
 
 
 			if which pacaur > /dev/null; then
@@ -418,7 +419,7 @@ case $DISTRO in
 
 
 		  else
-		  	echo "lm-_ensors was installed. Proceeding..."
+		  	echo "lm-_sensors was installed. Proceeding..."
 
 		fi
 		;;
