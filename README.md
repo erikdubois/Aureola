@@ -1,8 +1,8 @@
 # Aureola
 
-Version : v1.8.0
+Version : v1.8.1
 
-Date : 02/01/2017
+Date : 04/02/2017
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
