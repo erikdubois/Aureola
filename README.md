@@ -1,6 +1,6 @@
 # Aureola
 
-Version : v1.8.1
+Version : v1.8.2
 
 Date : 12/02/2017
 
