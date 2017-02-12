@@ -2,7 +2,7 @@
 
 Version : v1.8.1
 
-Date : 04/02/2017
+Date : 12/02/2017
 
 A collection of conky's I made myself and conky's I like that were shared with the community.
 
