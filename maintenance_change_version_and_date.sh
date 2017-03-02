@@ -8,8 +8,8 @@
 #
 ##################################################################################################################
 
-find .  -name "conky*.conf" -type f -exec sed -i  's/v1.8.3/v1.8.4/g' {} \;
-find .  -name "README.md" -type f -exec sed -i   's/v1.8.3/v1.8.4/g' {} \;
-find .  -name "conky.conf" -type f -exec sed -i  's/15\/02\/2017/28\/02\/2017/g' {} \;
-find .  -name "README.md" -type f -exec sed -i   's/15\/02\/2017/28\/02\/2017/g' {} \;
+find .  -name "conky*.conf" -type f -exec sed -i  's/v1.8.4/v1.8.5/g' {} \;
+find .  -name "README.md" -type f -exec sed -i   's/v1.8.4/v1.8.5/g' {} \;
+find .  -name "conky.conf" -type f -exec sed -i  's/28\/02\/2017/02\/03\/2017/g' {} \;
+find .  -name "README.md" -type f -exec sed -i   's/28\/02\/2017/02\/03\/2017/g' {} \;
 
