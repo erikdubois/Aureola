@@ -287,7 +287,7 @@ echo "Starting the conky"
 echo "################################################################"
 
 #starting the conky 
-conky -c ~/.config/conky/conky.conf
+conky -q -c ~/.config/conky/conky.conf
 
 echo "################################################################"
 echo "###################    T H E   E N D      ######################"
