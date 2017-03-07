@@ -131,6 +131,11 @@ You can use other integers 1,2,3.
 The most recent conky comes first.
 
 
+# Aureola - Logo
+
+![Screenshots](http://i.imgur.com/bxmV2rB.jpg)
+
+
 # Aureola - Phantom
 
 ![Screenshots](http://i.imgur.com/bOhpjPO.jpg)
