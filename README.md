@@ -1,5 +1,7 @@
 # Aureola
 
+# SUPPORT HAS STOPPED
+
 Version : v2.0.3
 
 Date : 27/01/2018
